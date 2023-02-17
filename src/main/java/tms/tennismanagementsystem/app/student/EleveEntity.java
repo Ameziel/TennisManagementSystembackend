@@ -16,25 +16,22 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name = "eleve")
 public class EleveEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
     private String prenom;
-
     private String nom;
-
-    private String adresse;
-
     private String telephone;
-
     private String email;
-
     private LocalDateTime dateDeNaissance;
-
     private String details;
-
     @OneToMany(mappedBy = "referenceEleve")
     private List<InscriptionFormuleEntity> inscriptionFormuleEntity;
+    public EleveEntity(String prenom, String nom, String telephone, String email, LocalDateTime date) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.telephone = telephone;
+        this.email = email;
+        this.dateDeNaissance = date;
+    }
 }
