@@ -10,7 +10,8 @@ import java.util.UUID;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping(path = "/api")
+@CrossOrigin("*")
+@RequestMapping(path = "/api") // /eleve a rajouter sans "/" à la fin
 public class EleveController {
 
     private EleveService eleveService;
@@ -19,11 +20,17 @@ public class EleveController {
     public List<EleveDTO> getAllEleves() {
         return eleveService.getAllEleves();
     }
+    @GetMapping("/eleves/search")
+    public List<EleveDTO> searchEleve(@RequestParam (name = "keyword", defaultValue = "") String keyword) {
+        return eleveService.searchEleves("%"+keyword+"%");
+    }
 
     @GetMapping("/eleves/{id}")
     public EleveDTO getEleve(@PathVariable(name = "id")String id) throws EleveNotFoundException {
         return eleveService.getEleveById(UUID.fromString(id));
     }
+
+
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/eleves")
@@ -31,8 +38,7 @@ public class EleveController {
         return eleveService.saveEleve(eleveDTO);
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("/eleves/{id}")
+    @PostMapping("/eleves/{id}")
     public EleveDTO updateEleve(@PathVariable UUID id, @RequestBody EleveDTO eleveDTO) {
         eleveDTO.setId(id);
         return eleveService.updateEleve(eleveDTO);

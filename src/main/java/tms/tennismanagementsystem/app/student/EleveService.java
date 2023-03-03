@@ -12,5 +12,5 @@ public interface EleveService {
     EleveDTO getEleveById(UUID id) throws EleveNotFoundException;
     EleveDTO updateEleve(EleveDTO eleveDTO);
     void deleteEleve(UUID id);
-
+    List<EleveDTO> searchEleves(String keyword);
 }

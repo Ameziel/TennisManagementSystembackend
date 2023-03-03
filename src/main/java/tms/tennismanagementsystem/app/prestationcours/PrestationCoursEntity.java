@@ -29,7 +29,7 @@ public class PrestationCoursEntity {
 
     private LocalDateTime datePrestation;
 
-    private int coefficientDuree; //Voir comment dire 1h ou 1h30, peut etre en duree minute ?
+    private Double coefficientDuree; //Voir comment dire 1h ou 1h30, peut etre en duree minute ?
 
     private String commentaire;
 

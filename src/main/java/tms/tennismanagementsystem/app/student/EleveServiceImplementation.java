@@ -17,7 +17,6 @@ public class EleveServiceImplementation implements EleveService{
     private EleveRepository eleveRepository;
     private EleveMapperImplementation eleveMapperImplementation;
 
-
     @Override
     public EleveDTO saveEleve(EleveDTO eleveDTO) {
         EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
@@ -46,5 +45,12 @@ public class EleveServiceImplementation implements EleveService{
     @Override
     public void deleteEleve(UUID id) {
         eleveRepository.deleteById(id);
+    }
+
+    @Override
+    public List<EleveDTO> searchEleves(String keyword) {
+        List<EleveEntity> eleves = eleveRepository.searchElevesByName(keyword);
+        List<EleveDTO> elevesDtos = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
+        return elevesDtos;
     }
 }

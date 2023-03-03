@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import tms.tennismanagementsystem.app.inscriptionformule.InscriptionFormuleEntity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -21,17 +22,21 @@ public class EleveEntity {
     private UUID id;
     private String prenom;
     private String nom;
+    @Enumerated(EnumType.STRING)
+    private Genre genre;
     private String telephone;
     private String email;
-    private LocalDateTime dateDeNaissance;
+    private LocalDate dateDeNaissance;
     private String details;
     @OneToMany(mappedBy = "referenceEleve")
     private List<InscriptionFormuleEntity> inscriptionFormuleEntity;
-    public EleveEntity(String prenom, String nom, String telephone, String email, LocalDateTime date) {
+    public EleveEntity(String prenom, String nom,String genre, String telephone, String email, LocalDate date) {
         this.prenom = prenom;
         this.nom = nom;
+        this.genre = Genre.valueOf(genre);
         this.telephone = telephone;
         this.email = email;
         this.dateDeNaissance = date;
     }
+
 }

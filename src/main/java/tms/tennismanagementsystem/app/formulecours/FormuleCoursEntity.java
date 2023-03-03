@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.formule;
+package tms.tennismanagementsystem.app.formulecours;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,11 +21,11 @@ public class FormuleCoursEntity {
 
     private String libelle;
 
-    private int effectifMaximum;
+    private Integer effectifMaximum;
 
-    private int nombreSeance;
+    private Integer nombreSeance;
 
-    private double tarif;
+    private Double tarif;
 
     private String annee;
 
