@@ -6,11 +6,10 @@ import java.util.List;
 import java.util.UUID;
 
 public interface EleveService {
-
-    EleveDTO saveEleve(EleveDTO eleveDTO);
     List<EleveDTO> getAllEleves();
     EleveDTO getEleveById(UUID id) throws EleveNotFoundException;
+    EleveDTO saveEleve(EleveDTO eleveDTO);
     EleveDTO updateEleve(EleveDTO eleveDTO);
     void deleteEleve(UUID id);
-    List<EleveDTO> searchEleves(String keyword);
+    List<EleveDTO> searchElevesByNames(String keyword);
 }
