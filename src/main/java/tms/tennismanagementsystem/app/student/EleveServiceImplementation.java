@@ -18,24 +18,28 @@ public class EleveServiceImplementation implements EleveService{
     private EleveMapperImplementation eleveMapperImplementation;
 
     @Override
-    public EleveDTO saveEleve(EleveDTO eleveDTO) {
-        EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
-        EleveEntity savedEleve = eleveRepository.save(eleve);
-        return eleveMapperImplementation.fromEleveEntity(savedEleve);
-    }
-    @Override
     public List<EleveDTO> getAllEleves() {
         List<EleveEntity> eleveEntities = eleveRepository.findAll();
         List<EleveDTO> elevesDTOs =
-                eleveEntities.stream().map(eleveEntity -> eleveMapperImplementation.fromEleveEntity(eleveEntity)).collect(Collectors.toList());
+                eleveEntities.stream().map(
+                        eleveEntity -> eleveMapperImplementation.fromEleveEntity(eleveEntity)).collect(Collectors.toList());
         return elevesDTOs;
     }
+
     @Override
     public EleveDTO getEleveById(UUID id) throws EleveNotFoundException {
         EleveEntity eleve = eleveRepository.findById(id)
                 .orElseThrow(() -> new EleveNotFoundException("Eleve not found"));
         return eleveMapperImplementation.fromEleveEntity(eleve);
     }
+
+    @Override
+    public EleveDTO saveEleve(EleveDTO eleveDTO) {
+        EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
+        EleveEntity savedEleve = eleveRepository.save(eleve);
+        return eleveMapperImplementation.fromEleveEntity(savedEleve);
+    }
+
     @Override
     public EleveDTO updateEleve(EleveDTO eleveDTO) {
         EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
@@ -48,7 +52,7 @@ public class EleveServiceImplementation implements EleveService{
     }
 
     @Override
-    public List<EleveDTO> searchEleves(String keyword) {
+    public List<EleveDTO> searchElevesByNames(String keyword) {
         List<EleveEntity> eleves = eleveRepository.searchElevesByName(keyword);
         List<EleveDTO> elevesDtos = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
         return elevesDtos;
