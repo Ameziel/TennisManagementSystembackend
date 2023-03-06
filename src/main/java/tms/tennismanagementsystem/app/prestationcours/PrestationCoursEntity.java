@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import tms.tennismanagementsystem.app.groupecours.GroupeCoursEntity;
 import tms.tennismanagementsystem.app.moniteur.MoniteurEntity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -16,23 +16,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name = "prestationcours")
 public class PrestationCoursEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
+    private LocalDate datePrestation;
+    private Double coefficientDuree; //Voir comment dire 1h ou 1h30, peut etre en duree minute ?
+    private String commentaire;
     @ManyToOne
     private GroupeCoursEntity referenceGroupe;
-
     @ManyToOne
     private MoniteurEntity referenceMoniteur;
-
-    private LocalDateTime datePrestation;
-
-    private Double coefficientDuree; //Voir comment dire 1h ou 1h30, peut etre en duree minute ?
-
-    private String commentaire;
-
-    //On pourra rajouter les absents par cours
-
 }
