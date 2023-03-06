@@ -5,9 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import tms.tennismanagementsystem.app.inscriptionformule.InscriptionFormuleEntity;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,5 +36,4 @@ public class EleveEntity {
         this.email = email;
         this.dateDeNaissance = date;
     }
-
 }
