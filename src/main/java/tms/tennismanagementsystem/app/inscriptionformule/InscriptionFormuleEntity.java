@@ -8,7 +8,7 @@ import tms.tennismanagementsystem.app.formulecours.FormuleCoursEntity;
 import tms.tennismanagementsystem.app.groupecours.GroupeCoursEntity;
 import tms.tennismanagementsystem.app.student.EleveEntity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -21,18 +21,13 @@ public class InscriptionFormuleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
+    private LocalDate datePaiement;
+    private Double acompte;
     @ManyToOne
     private EleveEntity referenceEleve;
-
     @OneToOne
     private GroupeCoursEntity referenceGroupe;
-
     @OneToOne
     private FormuleCoursEntity referenceFormule;
-
-    private LocalDateTime datePaiment;
-
-    private Double accompte;
 
 }
