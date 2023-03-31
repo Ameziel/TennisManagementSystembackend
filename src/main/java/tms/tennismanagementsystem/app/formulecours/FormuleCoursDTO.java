@@ -12,7 +12,7 @@ public class FormuleCoursDTO {
     private Integer effectifMaximum;
     private Integer nombreSeanceTotal;
     private Integer nombreSeanceHebdomadaire;
-    private String dureeSeance; //1H ou 1H30
+    private String dureeSeance;
     private Double tarif;
     private Integer annee;
     private LocalDate dateDebut;
