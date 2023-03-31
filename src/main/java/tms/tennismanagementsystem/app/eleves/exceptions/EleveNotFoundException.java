@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.student.exceptions;
+package tms.tennismanagementsystem.app.eleves.exceptions;
 
 public class EleveNotFoundException extends Exception {
 

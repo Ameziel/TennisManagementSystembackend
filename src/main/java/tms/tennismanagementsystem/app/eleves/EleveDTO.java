@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.student;
+package tms.tennismanagementsystem.app.eleves;
 
 import lombok.Data;
 

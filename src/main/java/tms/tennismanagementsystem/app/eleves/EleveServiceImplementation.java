@@ -1,9 +1,9 @@
-package tms.tennismanagementsystem.app.student;
+package tms.tennismanagementsystem.app.eleves;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tms.tennismanagementsystem.app.student.exceptions.EleveNotFoundException;
+import tms.tennismanagementsystem.app.eleves.exceptions.EleveNotFoundException;
 
 import java.util.List;
 import java.util.UUID;

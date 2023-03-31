@@ -1,9 +1,9 @@
-package tms.tennismanagementsystem.app.student;
+package tms.tennismanagementsystem.app.eleves;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import tms.tennismanagementsystem.app.student.exceptions.EleveNotFoundException;
+import tms.tennismanagementsystem.app.eleves.exceptions.EleveNotFoundException;
 
 import java.util.List;
 import java.util.UUID;
