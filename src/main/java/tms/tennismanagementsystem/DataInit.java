@@ -6,9 +6,12 @@ import org.springframework.context.annotation.Configuration;
 import tms.tennismanagementsystem.app.formulecours.FormuleCoursEntity;
 import tms.tennismanagementsystem.app.formulecours.Periode;
 import tms.tennismanagementsystem.app.formulecours.TypeBalle;
-import tms.tennismanagementsystem.app.student.EleveEntity;
-import tms.tennismanagementsystem.app.student.EleveRepository;
+import tms.tennismanagementsystem.app.eleves.EleveEntity;
+import tms.tennismanagementsystem.app.eleves.EleveRepository;
 import tms.tennismanagementsystem.app.formulecours.FormuleCoursRepository;
+import tms.tennismanagementsystem.app.moniteur.MoniteurEntity;
+import tms.tennismanagementsystem.app.moniteur.MoniteurRepository;
+import tms.tennismanagementsystem.app.moniteur.QualificationMoniteur;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,7 +20,7 @@ import java.util.List;
 public class DataInit {
 
     @Bean
-    CommandLineRunner commandLineRunner(EleveRepository eleveRepository, FormuleCoursRepository formuleCoursRepository) {
+    CommandLineRunner commandLineRunner(EleveRepository eleveRepository, FormuleCoursRepository formuleCoursRepository, MoniteurRepository moniteurRepository) {
         return args -> {
             EleveEntity first = new EleveEntity("Sam", "Sicard", "H", "+32481098012", "ramesh@gmail.com", LocalDate.now());
             EleveEntity second = new EleveEntity("Morn", "Tyn", "H", "+32481098012", "ramesh@gmail.com", LocalDate.now());
@@ -32,6 +35,14 @@ public class DataInit {
                     "Cours jeudi balle verte Marco 12h", 4, 30,1, "1H30" ,480.00d, 2022,LocalDate.of(2022,06,10), LocalDate.of(2022,8,10), Periode.HIVER, TypeBalle.VERTE);
             formuleCoursRepository.saveAll(List.of(premiereFormule,secondeFormule,troisiemeFormule));
 
+
+
+            MoniteurEntity moniteur_un = new MoniteurEntity("Arnaud", "Dupont", "arnaud@gmail.com", "+32471010203", QualificationMoniteur.ANIMATEUR);
+            MoniteurEntity moniteur_deux = new MoniteurEntity("Mathias", "Ressai", "mathias@gmail.com", "+32471020555", QualificationMoniteur.ENTRAINEUR);
+            MoniteurEntity moniteur_trois = new MoniteurEntity("Patrick", "Fiory", "patrick@gmail.com", "+32471068798", QualificationMoniteur.INITIATEUR);
+            moniteurRepository.saveAll(List.of(moniteur_un,moniteur_deux,moniteur_trois));
         };
     }
 }
+
+
