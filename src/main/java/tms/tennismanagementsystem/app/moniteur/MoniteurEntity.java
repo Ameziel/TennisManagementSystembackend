@@ -20,27 +20,22 @@ public class MoniteurEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
     private String prenom;
-
     private String nom;
-
-    private String adresse;
-
     private String email;
-
     private String telephone;
-
     @Enumerated(EnumType.STRING)
     private QualificationMoniteur qualification;
-
-    private String codeRemuneration; //a enlever peut etre ou mettre un montant en enum ? mais int possible ?
-
     @OneToMany(mappedBy = "moniteurResponsable")
     private List<GroupeCoursEntity> groupesCours;
-
     @OneToMany(mappedBy = "referenceMoniteur")
     private List<PrestationCoursEntity> prestationsCours;
 
-
+    public MoniteurEntity(String prenom, String nom, String email, String telephone, QualificationMoniteur qualification) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.email = email;
+        this.telephone = telephone;
+        this.qualification = qualification;
+    }
 }
