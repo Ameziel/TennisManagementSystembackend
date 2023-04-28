@@ -1,0 +1,73 @@
+/////////////// BACK END \\\\\\\\\\\\\\\\\\\
+- Ajouter un logger
+- Corriger la BD sur les relations @OneToOne
+- Dans "EleveServiceImplementation" est-ce que c'est bon ainsi ou faire retourner un Optional<T> ?
+- @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)  Evite de sérialiser et dépendance cyclique
+- Utiliser MapStruct
+- Nettoyer le dossier node_modules ?
+- Une fonction planning, sur un planning on voit tous les profs
+- Un module : Matériel et facturation. On garde encodé ce qu'on a acheté etc et comme ça on voit la date de roulement du matos
+- Modifier le rapport car j'ai changé les balles de côtés
+- Fonctionnalité mail groupé et envoi de mail déjà
+
+1) vérif de la bd (réduire le varchar255 ?  les liaisons sont bonnes ?)  pour les lengts suffisant
+2) Gestion des routes avec angular
+3) décomposition du projet angular
+4) Map Struct => Travailler avec un framework pour les DTO ?
+5) Question pour Fille/Garçon ou d'autres filtres. Que en front pas besoin de recharger la partie back ?
+
+est ce qu'un groupe est complet,
+chercher un groupe par prof 	ou par prof voir tous les groupes existants
+
+
+faire une boucle for a la main pour récupérer les objets
+
+v2 : ResponseEntity<>
+- devtools
+- start et limit dans le backend
+
+Pour encoder une prestation dans le formulaire on affichera les groupes en cours ACTIF
+c'est à dire qui concernent la saison actuelle et pas des cloturés. Donc faut rajouter un ETAT a un groupe
+
+Pour les prestations je ne voudrais que l'on ne puisse voir que les siennes... Comment faire ?
+Cacher l'ID quand on affiche les moniteurs ? oui d'accord mais surtout faire une
+
+
+- @CrossOrigin dans le controller, faire ça plus professionnelement.
+
+- https://www.youtube.com/watch?v=PTI8cniOXLc  1h40 les stream et avant mapper DTO
+- 1h50min
+- 2h15 OPEN API SWAGGER ( il fallait ajouter celui de springdoc et de la v2, les
+2 derniers dépendances dans le pom.xml quoi)...
+>>> Fin de la vidéo = pagination et elements concernés par un objet.
+            @PathVariable String accountId,
+            @RequestParam(name="page",defaultValue = "0") int page,
+            @RequestParam(name="size",defaultValue = "5")int size)
+
+            https://www.youtube.com/watch?v=8ZPsZBcue50  sl4j  pour le logging
+            31min pour la "pagination backend"
+
+- Ajouter le type de balle pour les groupes ? En version suivante
+
+
+            /////////////// FRONT END \\\\\\\\\\\\\\\\\\\
+
+            https://www.youtube.com/watch?v=bOoPKctcE0s  1h30 les erreurs en angular front end, pas fait
+
+
+
+
+            @Configuration
+            @EnableWebMvc
+            public class CorsConfig implements WebMvcConfigurer {
+
+                @Override
+                public void addCorsMappings(CorsRegistry registry) {
+                    registry.addMapping("/**")
+                        .allowedOrigins("*")
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true)
+                        .maxAge(3600);
+                }
+            }
