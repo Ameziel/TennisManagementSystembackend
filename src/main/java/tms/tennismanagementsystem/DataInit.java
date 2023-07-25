@@ -3,12 +3,12 @@ package tms.tennismanagementsystem;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tms.tennismanagementsystem.app.formulecours.FormuleCoursEntity;
-import tms.tennismanagementsystem.app.formulecours.Periode;
-import tms.tennismanagementsystem.app.formulecours.TypeBalle;
 import tms.tennismanagementsystem.app.eleves.EleveEntity;
 import tms.tennismanagementsystem.app.eleves.EleveRepository;
+import tms.tennismanagementsystem.app.formulecours.FormuleCoursEntity;
 import tms.tennismanagementsystem.app.formulecours.FormuleCoursRepository;
+import tms.tennismanagementsystem.app.formulecours.Periode;
+import tms.tennismanagementsystem.app.formulecours.TypeBalle;
 import tms.tennismanagementsystem.app.moniteur.MoniteurEntity;
 import tms.tennismanagementsystem.app.moniteur.MoniteurRepository;
 import tms.tennismanagementsystem.app.moniteur.QualificationMoniteur;
@@ -22,7 +22,7 @@ public class DataInit {
     @Bean
     CommandLineRunner commandLineRunner(EleveRepository eleveRepository, FormuleCoursRepository formuleCoursRepository, MoniteurRepository moniteurRepository) {
         return args -> {
-            EleveEntity first = new EleveEntity("Sam", "Sicard", "H", "+32481098012", "ramesh@gmail.com", LocalDate.now());
+            EleveEntity first = new EleveEntity("sam", "sicard", "H", "+32481098012", "ramesh@gmail.com", LocalDate.now());
             EleveEntity second = new EleveEntity("Morn", "Tyn", "H", "+32481098012", "ramesh@gmail.com", LocalDate.now());
             eleveRepository.saveAll(List.of(first,second));
 
