@@ -37,6 +37,7 @@ public class EleveServiceImplementation implements EleveService{
     public EleveDTO saveEleve(EleveDTO eleveDTO) {
         EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
         EleveEntity savedEleve = eleveRepository.save(eleve);
+        TransformAttributeIntoLowercase(savedEleve);
         return eleveMapperImplementation.fromEleveEntity(savedEleve);
     }
 
@@ -44,6 +45,7 @@ public class EleveServiceImplementation implements EleveService{
     public EleveDTO updateEleve(EleveDTO eleveDTO) {
         EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
         EleveEntity savedEleve = eleveRepository.save(eleve);
+        TransformAttributeIntoLowercase(savedEleve);
         return eleveMapperImplementation.fromEleveEntity(savedEleve);
     }
     @Override
@@ -56,5 +58,10 @@ public class EleveServiceImplementation implements EleveService{
         List<EleveEntity> eleves = eleveRepository.searchElevesByName(keyword);
         List<EleveDTO> elevesDtos = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
         return elevesDtos;
+    }
+
+    private void TransformAttributeIntoLowercase(EleveEntity savedEleve) {
+        savedEleve.setNom(savedEleve.getNom().toLowerCase());
+        savedEleve.setPrenom(savedEleve.getPrenom().toLowerCase());
     }
 }
