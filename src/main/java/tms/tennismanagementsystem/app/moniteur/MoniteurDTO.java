@@ -1,6 +1,7 @@
 package tms.tennismanagementsystem.app.moniteur;
 
 import lombok.Data;
+
 import java.util.UUID;
 
 @Data
@@ -12,4 +13,5 @@ public class MoniteurDTO {
     private String email;
     private String telephone;
     private QualificationMoniteur qualification;
+    private boolean actif;
 }

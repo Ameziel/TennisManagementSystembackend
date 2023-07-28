@@ -26,6 +26,7 @@ public class MoniteurEntity {
     private String telephone;
     @Enumerated(EnumType.STRING)
     private QualificationMoniteur qualification;
+    private boolean actif;
     @OneToMany(mappedBy = "moniteurResponsable")
     private List<GroupeCoursEntity> groupesCours;
     @OneToMany(mappedBy = "referenceMoniteur")
