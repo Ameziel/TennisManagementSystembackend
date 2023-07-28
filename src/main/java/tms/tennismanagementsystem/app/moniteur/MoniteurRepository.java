@@ -10,6 +10,6 @@ import java.util.UUID;
 @Repository
 public interface MoniteurRepository extends JpaRepository<MoniteurEntity, UUID> {
 
-    @Query("FROM MoniteurEntity m WHERE m.prenom like :keyword OR m.nom like :keyword")
+    @Query("FROM MoniteurEntity m WHERE m.prenom like LOWER(:keyword) OR m.nom like LOWER(:keyword)")
     List<MoniteurEntity> searchMoniteursByName(@Param("keyword") String keyword);
 }
