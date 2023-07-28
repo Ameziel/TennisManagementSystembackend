@@ -40,6 +40,7 @@ public class MoniteurServiceImplementation implements MoniteurService{
     public MoniteurDTO saveMoniteur(MoniteurDTO moniteurDTO) {
         MoniteurEntity moniteurEntity = moniteurMapperImplementation.fromMoniteurDTO(moniteurDTO);
         MoniteurEntity savedMoniteur = moniteurRepository.save(moniteurEntity);
+        TransformAttributeIntoLowercase(savedMoniteur);
         return moniteurMapperImplementation.fromMoniteurEntity(savedMoniteur);
     }
 
@@ -47,6 +48,7 @@ public class MoniteurServiceImplementation implements MoniteurService{
     public MoniteurDTO updateMoniteur(MoniteurDTO moniteurDTO) {
         MoniteurEntity moniteurEntity = moniteurMapperImplementation.fromMoniteurDTO(moniteurDTO);
         MoniteurEntity savedMoniteur = moniteurRepository.save(moniteurEntity);
+        TransformAttributeIntoLowercase(savedMoniteur);
         return moniteurMapperImplementation.fromMoniteurEntity(savedMoniteur);
     }
 
@@ -62,5 +64,10 @@ public class MoniteurServiceImplementation implements MoniteurService{
         List<MoniteurDTO> moniteurDTOS = moniteurs.stream().map(
                 m -> moniteurMapperImplementation.fromMoniteurEntity(m)).collect(Collectors.toList());
         return moniteurDTOS;
+    }
+
+    private void TransformAttributeIntoLowercase(MoniteurEntity savedMoniteur) {
+        savedMoniteur.setNom(savedMoniteur.getNom().toLowerCase());
+        savedMoniteur.setPrenom(savedMoniteur.getPrenom().toLowerCase());
     }
 }
