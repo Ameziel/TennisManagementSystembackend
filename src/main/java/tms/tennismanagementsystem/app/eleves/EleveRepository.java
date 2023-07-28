@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @Repository
 public interface EleveRepository extends JpaRepository<EleveEntity, UUID> {
-    @Query("FROM EleveEntity e WHERE e.prenom like :keyword OR e.nom like :keyword")
+    @Query("FROM EleveEntity e WHERE e.prenom like LOWER(:keyword) OR e.nom like LOWER(:keyword)")
     List<EleveEntity> searchElevesByName(@Param("keyword") String keyword);
 
 }
