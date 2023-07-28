@@ -19,6 +19,7 @@ public class FormuleCoursDTO {
     private LocalDate dateFin;
     private Periode periode;
     private TypeBalle typeBalle;
+    private boolean actif;
 }
 
 

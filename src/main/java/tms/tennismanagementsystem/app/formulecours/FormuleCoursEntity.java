@@ -31,6 +31,7 @@ public class FormuleCoursEntity {
     private Periode periode;
     @Enumerated(EnumType.STRING)
     private TypeBalle typeBalle;
+    private boolean actif;
     @OneToOne(mappedBy = "referenceFormule")
     private InscriptionFormuleEntity inscriptionFormuleEntity;
     public FormuleCoursEntity(String libelle, int effectifMaximum, int nombreSeanceTotal, int nombreSeanceHebdomadaire,
