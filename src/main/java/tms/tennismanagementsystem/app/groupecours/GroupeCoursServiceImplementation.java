@@ -1,11 +1,16 @@
 package tms.tennismanagementsystem.app.groupecours;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tms.tennismanagementsystem.app.groupecours.exceptions.GroupeCoursNotFoundException;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
+@Service
+@Transactional
+@AllArgsConstructor
 public class GroupeCoursServiceImplementation implements GroupeCoursService{
 
     private GroupeCoursRepository groupeCoursRepository;

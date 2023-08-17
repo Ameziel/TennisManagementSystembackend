@@ -1,11 +1,17 @@
 package tms.tennismanagementsystem.app.prestationcours;
 
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tms.tennismanagementsystem.app.prestationcours.exceptions.PrestationCoursNotFoundException;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Service
+@Transactional
+@AllArgsConstructor
 public class PrestationCoursServiceImplementation implements PrestationCoursService{
 
     private PrestationCoursRepository prestationCoursRepository;
@@ -20,7 +26,7 @@ public class PrestationCoursServiceImplementation implements PrestationCoursServ
     }
 
     @Override
-    public PrestationCoursDTO getGPrestationCours(UUID id) throws PrestationCoursNotFoundException {
+    public PrestationCoursDTO getGPrestationCoursById(UUID id) throws PrestationCoursNotFoundException {
         PrestationCoursEntity prestationCoursEntity = prestationCoursRepository.findById(id)
                 .orElseThrow(() -> new PrestationCoursNotFoundException("PrestationCours not found"));
         return prestationCoursMapperImplementation.fromPrestationCoursEntity(prestationCoursEntity);

@@ -22,25 +22,27 @@ public class FormuleCoursEntity {
     private Integer effectifMaximum;
     private Integer nombreSeanceTotal;
     private Integer nombreSeanceHebdomadaire;
-    private String dureeSeance; //1H ou 1H30
+    private Integer dureeSeanceMinute;
     private Double tarif;
     private Integer annee;
     private LocalDate dateDebut;
     private LocalDate dateFin;
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) // HIVER, ETE, ANNEE
     private Periode periode;
     @Enumerated(EnumType.STRING)
     private TypeBalle typeBalle;
+    @Enumerated(EnumType.STRING)
+    private Niveau niveau;
     private boolean actif;
     @OneToOne(mappedBy = "referenceFormule")
     private InscriptionFormuleEntity inscriptionFormuleEntity;
     public FormuleCoursEntity(String libelle, int effectifMaximum, int nombreSeanceTotal, int nombreSeanceHebdomadaire,
-                              String dureeSeance, double tarif, int annee, LocalDate dateDebut, LocalDate dateFin, Periode periode, TypeBalle typeBalle) {
+                              Integer dureeSeance, double tarif, int annee, LocalDate dateDebut, LocalDate dateFin, Periode periode, TypeBalle typeBalle) {
         this.libelle = libelle;
         this.effectifMaximum = effectifMaximum;
         this.nombreSeanceTotal = nombreSeanceTotal;
         this.nombreSeanceHebdomadaire = nombreSeanceHebdomadaire;
-        this.dureeSeance = dureeSeance;
+        this.dureeSeanceMinute = dureeSeance;
         this.tarif = tarif;
         this.annee = annee;
         this.dateDebut = dateDebut;

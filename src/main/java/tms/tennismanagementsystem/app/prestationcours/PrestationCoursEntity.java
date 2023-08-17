@@ -20,7 +20,7 @@ public class PrestationCoursEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private LocalDate datePrestation;
-    private Double coefficientDuree; //Voir comment dire 1h ou 1h30, peut etre en duree minute ?
+    private Double coefficientDuree;
     private String commentaire;
     @ManyToOne
     private GroupeCoursEntity referenceGroupe;

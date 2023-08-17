@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @AllArgsConstructor
-public class EleveServiceImplementation implements EleveService{
+public class EleveServiceImplementation {
 
     private EleveRepository eleveRepository;
     private EleveMapperImplementation eleveMapperImplementation;
 
-    @Override
+
     public List<EleveDTO> getAllEleves() {
         List<EleveEntity> eleveEntities = eleveRepository.findAll();
         List<EleveDTO> elevesDTOs =
@@ -26,42 +26,66 @@ public class EleveServiceImplementation implements EleveService{
         return elevesDTOs;
     }
 
-    @Override
+
+
+
     public EleveDTO getEleveById(UUID id) throws EleveNotFoundException {
         EleveEntity eleve = eleveRepository.findById(id)
                 .orElseThrow(() -> new EleveNotFoundException("Eleve not found"));
         return eleveMapperImplementation.fromEleveEntity(eleve);
     }
 
-    @Override
+
     public EleveDTO saveEleve(EleveDTO eleveDTO) {
         EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
         EleveEntity savedEleve = eleveRepository.save(eleve);
-        TransformAttributeIntoLowercase(savedEleve);
+//        TransformAttributeIntoLowercase(savedEleve);
         return eleveMapperImplementation.fromEleveEntity(savedEleve);
     }
 
-    @Override
+
     public EleveDTO updateEleve(EleveDTO eleveDTO) {
         EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
         EleveEntity savedEleve = eleveRepository.save(eleve);
-        TransformAttributeIntoLowercase(savedEleve);
+//        TransformAttributeIntoLowercase(savedEleve);
         return eleveMapperImplementation.fromEleveEntity(savedEleve);
     }
-    @Override
+
     public void deleteEleve(UUID id) {
         eleveRepository.deleteById(id);
     }
 
-    @Override
+
     public List<EleveDTO> searchElevesByNames(String keyword) {
         List<EleveEntity> eleves = eleveRepository.searchElevesByName(keyword);
         List<EleveDTO> elevesDtos = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
         return elevesDtos;
     }
 
-    private void TransformAttributeIntoLowercase(EleveEntity savedEleve) {
-        savedEleve.setNom(savedEleve.getNom().toLowerCase());
-        savedEleve.setPrenom(savedEleve.getPrenom().toLowerCase());
+
+    public List<EleveDTO> findByEmail(String email) {
+        return eleveRepository.findByEmail(email);
+    } //TODO s'il y en a plusieurs, JPA va trouver par défaut ?
+
+
+    public List<EleveDTO> getAllActifsEleves() {
+        List<EleveEntity> eleves = eleveRepository.findAllByActifTrue();
+        List<EleveDTO> elevesDtos = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
+        return elevesDtos;
     }
+
+
+    public List<EleveDTO> getAllInactifEleves() {
+
+        return null;
+    }
+
+    /*******************************
+            Private
+     ********************************/
+
+//    private void TransformAttributeIntoLowercase(EleveEntity savedEleve) {
+//        savedEleve.setNom(savedEleve.getNom().toLowerCase());
+//        savedEleve.setPrenom(savedEleve.getPrenom().toLowerCase());
+//    }
 }

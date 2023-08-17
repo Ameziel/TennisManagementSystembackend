@@ -15,4 +15,37 @@ public class EleveDTO {
     private String email;
     private LocalDate dateDeNaissance;
     private String details;
+    private boolean actif;
+
+
+
+    public EleveDTO() {
+    }
+
+    public EleveDTO(String prenom, String nom, Genre genre, String telephone, String email, LocalDate dateDeNaissance, String details, boolean actif) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.genre = genre;
+        this.telephone = telephone;
+        this.email = email;
+        this.dateDeNaissance = dateDeNaissance;
+        this.details = details;
+        this.actif = actif;
+    }
+
+    public EleveDTO(UUID id, String prenom, String nom, Genre genre, String telephone, String email, LocalDate dateDeNaissance, String details, boolean actif) {
+        this.id = id;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.genre = genre;
+        this.telephone = telephone;
+        this.email = email;
+        this.dateDeNaissance = dateDeNaissance;
+        this.details = details;
+        this.actif = actif;
+    }
+
+
+    public EleveDTO(String uuid, String margot, String iktoria, Genre genre, String telephone, String mail, LocalDate of, String loremIpsum, boolean actif) {
+    }
 }

@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public interface PrestationCoursService {
     List<PrestationCoursDTO> getAllPrestationsCours();
-    PrestationCoursDTO getGPrestationCours(UUID id) throws PrestationCoursNotFoundException;
+    PrestationCoursDTO getGPrestationCoursById(UUID id) throws PrestationCoursNotFoundException;
     PrestationCoursDTO savePrestationCours(PrestationCoursDTO prestationCoursDTO);
     PrestationCoursDTO updatePrestationCours(PrestationCoursDTO prestationCoursDTO);
     void deletePrestationCoursDTO(UUID id);

@@ -21,8 +21,9 @@ public class InscriptionFormuleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private LocalDate datePaiement; //Date du paiement total, pas de l'accom
-    private Double acompte;
+    private Double montantPercu;
+    private LocalDate datePaiement;
+    private String notePaiement;
     @ManyToOne
     private EleveEntity referenceEleve;
     @OneToOne
@@ -30,8 +31,4 @@ public class InscriptionFormuleEntity {
     @OneToOne
     private FormuleCoursEntity referenceFormule;
 
-    public InscriptionFormuleEntity(LocalDate datePaiement, Double acompte) {
-        this.datePaiement = datePaiement;
-        this.acompte = acompte;
-    }
 }

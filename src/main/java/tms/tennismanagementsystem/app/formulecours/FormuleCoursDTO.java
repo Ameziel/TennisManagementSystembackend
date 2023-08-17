@@ -12,13 +12,14 @@ public class FormuleCoursDTO {
     private Integer effectifMaximum;
     private Integer nombreSeanceTotal;
     private Integer nombreSeanceHebdomadaire;
-    private String dureeSeance;
+    private Integer dureeSeanceMinute;
     private Double tarif;
     private Integer annee;
     private LocalDate dateDebut;
     private LocalDate dateFin;
     private Periode periode;
     private TypeBalle typeBalle;
+    private Niveau niveau;
     private boolean actif;
 }
 

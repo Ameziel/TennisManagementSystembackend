@@ -14,34 +14,36 @@ import java.util.UUID;
 @RequestMapping(path = "/api/v1")
 public class EleveController {
 
-    private EleveService eleveService;
+    private EleveServiceImplementation eleveServiceImplementation;
 
     @GetMapping("/eleves")
     public List<EleveDTO> getAllEleves() {
-        return eleveService.getAllEleves();
+        return eleveServiceImplementation.getAllEleves();
     }
     @GetMapping("/eleves/search")
-    public List<EleveDTO> searchEleve(@RequestParam (name = "keyword", defaultValue = "") String keyword) {
-        return eleveService.searchElevesByNames("%"+keyword+"%");
+    public List<EleveDTO> searchEleveByNames(@RequestParam (name = "keyword", defaultValue = "") String keyword) {
+        return eleveServiceImplementation.searchElevesByNames("%"+keyword+"%");
     }
     @GetMapping("/eleves/{id}")
-    public EleveDTO getEleve(@PathVariable(name = "id")String id) throws EleveNotFoundException {
-        return eleveService.getEleveById(UUID.fromString(id));
+    public EleveDTO getEleveById(@PathVariable(name = "id")String id) throws EleveNotFoundException {
+        return eleveServiceImplementation.getEleveById(UUID.fromString(id));
     }
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/eleves")
+    @ResponseStatus(HttpStatus.CREATED)
     public EleveDTO save(@RequestBody EleveDTO eleveDTO) {
-        return eleveService.saveEleve(eleveDTO);
+        return eleveServiceImplementation.saveEleve(eleveDTO);
     }
 
     @PutMapping("/eleves/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public EleveDTO updateEleve(@PathVariable UUID id, @RequestBody EleveDTO eleveDTO) {
         eleveDTO.setId(id);
-        return eleveService.updateEleve(eleveDTO);
+        return eleveServiceImplementation.updateEleve(eleveDTO);
     }
-    @ResponseStatus()
+
     @DeleteMapping("/eleves/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEleve(@PathVariable UUID id) {
-        eleveService.deleteEleve(id);
+        eleveServiceImplementation.deleteEleve(id);
     }
 }

@@ -18,17 +18,14 @@ public class GroupeCoursEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String libelle;
-
-
+    private String libelle; //Plutot une clé étrangère sur la formule
     @Enumerated(EnumType.STRING)
     private Jour jour1;
     @Enumerated(EnumType.STRING)
     private Jour jour2;
-    private ;
-
+    private boolean actif;
     @ManyToOne
-    private MoniteurEntity moniteurResponsable; //inutile je pense
+    private MoniteurEntity moniteurResponsable;
     @OneToOne(mappedBy = "referenceGroupe")
     private InscriptionFormuleEntity inscriptionFormuleEntity;
 }

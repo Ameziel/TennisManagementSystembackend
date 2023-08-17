@@ -1,7 +1,9 @@
 package tms.tennismanagementsystem.app.groupecours;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 
+@Service
 public class GroupeCoursMapperImplementation {
     public GroupeCoursDTO fromGroupeCoursEntity(GroupeCoursEntity groupeCoursEntity) {
         GroupeCoursDTO groupeCoursDTO = new GroupeCoursDTO();
