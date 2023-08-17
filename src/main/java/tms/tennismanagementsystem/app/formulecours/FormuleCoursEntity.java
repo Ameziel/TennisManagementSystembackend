@@ -13,7 +13,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "formulecours")
+@Table(name = "formulescours")
 public class FormuleCoursEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

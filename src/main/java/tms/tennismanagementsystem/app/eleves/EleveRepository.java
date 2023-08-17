@@ -15,6 +15,9 @@ public interface EleveRepository extends JpaRepository<EleveEntity, UUID> {
     List<EleveDTO> findByEmail(@Param("email") String email);
 
 
-    List<EleveEntity> findAllByActifTrue();
-    List<EleveEntity> findAllByActifFalse();
+    List<EleveDTO> findAllByActifTrue(); //TODO a corriger ne fonctionne pas
+
+    @Query("FROM EleveEntity e WHERE e.actif = true")
+    List<EleveEntity> findElevesActifs();
+    List<EleveDTO> findAllByActifFalse();
 }

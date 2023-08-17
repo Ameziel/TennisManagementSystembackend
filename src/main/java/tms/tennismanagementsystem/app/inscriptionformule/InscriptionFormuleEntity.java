@@ -15,7 +15,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "inscriptionformule")
+@Table(name = "inscriptionsformule")
 public class InscriptionFormuleEntity {
 
     @Id

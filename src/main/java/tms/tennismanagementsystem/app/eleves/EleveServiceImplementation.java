@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @AllArgsConstructor
-public class EleveServiceImplementation {
+public class EleveServiceImplementation implements EleveService {
 
     private EleveRepository eleveRepository;
     private EleveMapperImplementation eleveMapperImplementation;
@@ -27,14 +27,11 @@ public class EleveServiceImplementation {
     }
 
 
-
-
     public EleveDTO getEleveById(UUID id) throws EleveNotFoundException {
         EleveEntity eleve = eleveRepository.findById(id)
                 .orElseThrow(() -> new EleveNotFoundException("Eleve not found"));
         return eleveMapperImplementation.fromEleveEntity(eleve);
     }
-
 
     public EleveDTO saveEleve(EleveDTO eleveDTO) {
         EleveEntity eleve = eleveMapperImplementation.fromEleveDTO(eleveDTO);
@@ -69,9 +66,11 @@ public class EleveServiceImplementation {
 
 
     public List<EleveDTO> getAllActifsEleves() {
-        List<EleveEntity> eleves = eleveRepository.findAllByActifTrue();
-        List<EleveDTO> elevesDtos = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
-        return elevesDtos;
+        List<EleveEntity> elevesActifs = eleveRepository.findElevesActifs();
+        System.out.println("ici service");
+        elevesActifs.forEach(e -> System.out.println(e));
+        List<EleveDTO> elevesActifsDtos = elevesActifs.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
+        return elevesActifsDtos;
     }
 
 

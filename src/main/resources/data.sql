@@ -1,4 +1,4 @@
-  INSERT INTO eleve (id,date_de_naissance,details,email,actif,genre,nom,prenom,telephone)
+  INSERT INTO eleves (id,date_de_naissance,details,email,actif,genre,nom,prenom,telephone)
   VALUES
   ('5FD2CE6E-7358-204F-E15E-C8D9982160F9','28/04/2000','Lorem ipsum','augue.id@outlook.ca','true','F','Addison','Mona','04 12 15 89 88'),
   ('3CB059BE-CC68-FA22-CB7C-1C47801D7EEF','25/05/1993','Lorem ipsum','luctus.ut@aol.net','false','H','Jennifer','Armand','02 85 07 68 20'),
@@ -16,7 +16,7 @@
   ('61338D6E-9CE5-D946-8D26-A13657DE7CBA','29/03/2000','Lorem ipsum','in.aliquet@hotmail.net','true','H','Nissim','Odette','08 84 56 57 86'),
   ('1AB24CB6-AF24-9157-735E-271984A15B77','19/01/2004','Lorem ipsum dolor sit amet, consectetuer adipiscing','mauris@hotmail.com','false','F','Mara','Ruby','05 65 31 96 64');
 
-      INSERT INTO moniteur (id,actif,email,nom,prenom,qualification,telephone)
+      INSERT INTO moniteurs (id,actif,email,nom,prenom,qualification,telephone)
       VALUES
       ('8150B7B2-A4EA-7794-B882-35D886DBC17B','false','nunc@yahoo.edu','Dalton','Clarke','ANIMATEUR','03 98 25 42 41'),
       ('C44264C3-A1DF-AB14-FDA9-395E1DDD0259','true','purus.sapien@hotmail.org','Drake','Tanek','ANIMATEUR','05 62 71 56 68'),
@@ -28,7 +28,7 @@
       ('A4E119A8-928E-66CD-6413-1B2B51E79170','false','ut.sagittis@protonmail.ca','Yvette','Ezekiel','ENTRAINEUR','07 54 28 04 33'),
       ('CC63D5AC-72B9-E453-117C-6697FAEA679C','true','porttitor.tellus@icloud.org','Zachary','Otto','ANIMATEUR','04 82 32 45 48');
 
-    INSERT INTO formulecours (id,actif,annee,date_debut,date_fin,duree_seance_minute,effectif_maximum,libelle,niveau,nombre_seance_total,nombre_seance_hebdomadaire,periode,tarif,type_balle)
+    INSERT INTO formulescours (id,actif,annee,date_debut,date_fin,duree_seance_minute,effectif_maximum,libelle,niveau,nombre_seance_total,nombre_seance_hebdomadaire,periode,tarif,type_balle)
     VALUES
     ('9F9DAD95-9FAD-0B87-8452-67035E83345B','true','2022','11/09/2023','05/02/2024',60,4,'Cours Adulte groupe de 4 - LOISIR', 'LOISIR', 25,1,'HIVER', 350.00, 'JAUNE'),
     ('57FDE1D9-877A-DD4C-7736-1DA9E947E544','true','2022','11/04/2023','05/06/2024',60,4,'Cours Adulte groupe de 4 - LOISIR', 'LOISIR',  8,1,'ETE', 150, 'JAUNE'),
@@ -41,7 +41,7 @@
 
 
 
---      INSERT INTO inscriptionformule (id,date_paiement,montant_percu,note_paiement,reference_eleve_id,reference_formule_id,reference_groupe_id)
+--      INSERT INTO inscriptionsformule (id,date_paiement,montant_percu,note_paiement,reference_eleve_id,reference_formule_id,reference_groupe_id)
 --      VALUES
 --      ('5FD2CE6E-7358-204F-AA12-C8D9982160F9','22/09/2023','350.00', 'paiement complet, ras.', '5FD2CE6E-7358-204F-E15E-C8D9982160F9','9F9DAD95-9FAD-0B87-8452-67035E83345B', '');
 --      ('3CB059BE-CC68-FA22-AA13-1C47801D7EEF','true','2022','11/04/2023','05/06/2024',1,4,'Cours Adulte groupe de 4 - LOISIR', 'LOISIR',  8,1,'ETE', 150, 'JAUNE'),
@@ -54,12 +54,12 @@
 
 
 
---    INSERT INTO groupecours (id,libelle,jour1,jour2,moniteur_responsable_id)
+--    INSERT INTO groupescours (id,libelle,jour1,jour2,moniteur_responsable_id)
 --    VALUES
 --    ('8CA18B54-8DD7-C821-E34F-AB1580C45235','MARDI','','')
 
 
---INSERT INTO prestationcours
+--INSERT INTO prestationscours
 
 
 

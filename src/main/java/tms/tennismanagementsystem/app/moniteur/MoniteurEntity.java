@@ -14,7 +14,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "moniteur")
+@Table(name = "moniteurs")
 public class MoniteurEntity {
 
     @Id
