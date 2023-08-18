@@ -1,7 +1,7 @@
   INSERT INTO eleves (id,date_de_naissance,details,email,actif,genre,nom,prenom,telephone)
   VALUES
   ('5FD2CE6E-7358-204F-E15E-C8D9982160F9','28/04/2000','Lorem ipsum','augue.id@outlook.ca','true','F','Addison','Mona','04 12 15 89 88'),
-  ('3CB059BE-CC68-FA22-CB7C-1C47801D7EEF','25/05/1993','Lorem ipsum','luctus.ut@aol.net','false','H','Jennifer','Armand','02 85 07 68 20'),
+  ('3CB059BE-CC68-FA22-CB7C-1C47801D7EEF','25/05/1993','Lorem ipsum','augue.id@outlook.ca','false','H','Jennifer','Armand','02 85 07 68 20'),
   ('936AC4C1-B9A5-9640-1517-3CD1D931B995','21/03/2004','Lorem','vehicula.aliquet@outlook.couk','true','H','Noble','Murphy','07 39 86 63 88'),
   ('2D16475C-8CE5-B684-D87E-839147CBC96E','12/10/1996','Lorem ipsum','arcu@hotmail.couk','true','F','Dustin','Carson','06 52 61 36 51'),
   ('4A8C1645-8D67-6527-1688-C1D13C129F6C','09/11/1991','Lorem ipsum dolor sit amet, consectetuer','tellus.non@protonmail.couk','true','F','Jared','Trevor','09 67 36 72 26'),
