@@ -12,12 +12,7 @@ import java.util.UUID;
 public interface EleveRepository extends JpaRepository<EleveEntity, UUID> {
     @Query("FROM EleveEntity e WHERE e.prenom like LOWER(:keyword) OR e.nom like LOWER(:keyword)")
     List<EleveEntity> searchElevesByName(@Param("keyword") String keyword);
-    List<EleveDTO> findByEmail(@Param("email") String email);
-
-
-    List<EleveDTO> findAllByActifTrue(); //TODO a corriger ne fonctionne pas
-
-    @Query("FROM EleveEntity e WHERE e.actif = true")
-    List<EleveEntity> findElevesActifs();
-    List<EleveDTO> findAllByActifFalse();
+    List<EleveEntity> findAllByActifTrue();
+    List<EleveEntity> findAllByActifFalse();
+    List<EleveEntity> findAllByEmail(String email);
 }

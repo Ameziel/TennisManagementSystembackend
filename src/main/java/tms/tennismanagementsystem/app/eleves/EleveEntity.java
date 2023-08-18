@@ -31,4 +31,27 @@ public class EleveEntity {
     @OneToMany(mappedBy = "referenceEleve")
     private List<InscriptionFormuleEntity> inscriptionFormuleEntity;
 
+
+    public EleveEntity(String prenom, String nom, Genre genre, String telephone, String email, LocalDate dateDeNaissance, String details, boolean actif) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.genre = genre;
+        this.telephone = telephone;
+        this.email = email;
+        this.dateDeNaissance = dateDeNaissance;
+        this.details = details;
+        this.actif = actif;
+    }
+
+    public EleveEntity(UUID id, String prenom, String nom, Genre genre, String telephone, String email, LocalDate dateDeNaissance, String details, boolean actif) {
+        this.id = id;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.genre = genre;
+        this.telephone = telephone;
+        this.email = email;
+        this.dateDeNaissance = dateDeNaissance;
+        this.details = details;
+        this.actif = actif;
+    }
 }

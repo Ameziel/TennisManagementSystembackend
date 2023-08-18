@@ -15,32 +15,69 @@ import java.util.UUID;
 public class EleveController {
 
     private EleveServiceImplementation eleveServiceImplementation;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @GetMapping("/eleves")
     public List<EleveDTO> getAllEleves() {
         return eleveServiceImplementation.getAllEleves();
-    }
-    @GetMapping("/eleves/search")
-    public List<EleveDTO> searchEleveByNames(@RequestParam (name = "keyword", defaultValue = "") String keyword) {
-        return eleveServiceImplementation.searchElevesByNames("%"+keyword+"%");
     }
     @GetMapping("/eleves/{id}")
     public EleveDTO getEleveById(@PathVariable(name = "id")String id) throws EleveNotFoundException {
         return eleveServiceImplementation.getEleveById(UUID.fromString(id));
     }
+    @GetMapping("/eleves/search")
+    public List<EleveDTO> searchEleveByNames(@RequestParam (name = "keyword", defaultValue = "") String keyword) {
+        return eleveServiceImplementation.searchElevesByNames("%"+keyword+"%");
+    }
+    @GetMapping("/eleves/actifs")
+    public List<EleveDTO> getAllActifsEleves() {
+        return eleveServiceImplementation.getAllActifsEleves();
+    }
+    @GetMapping("/eleves/inactifs")
+    public List<EleveDTO> getAllInactifsEleves() {
+        return eleveServiceImplementation.getAllInactifsEleves();
+    }
+    @GetMapping("/eleves/email")
+    public List<EleveDTO> getAllByEmails(@RequestParam (name = "email", defaultValue = "") String email) {
+        return eleveServiceImplementation.findAllByEmail(email);
+    }
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @PostMapping("/eleves")
     @ResponseStatus(HttpStatus.CREATED)
     public EleveDTO save(@RequestBody EleveDTO eleveDTO) {
         return eleveServiceImplementation.saveEleve(eleveDTO);
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
     @PutMapping("/eleves/{id}")
     @ResponseStatus(HttpStatus.OK)
     public EleveDTO updateEleve(@PathVariable UUID id, @RequestBody EleveDTO eleveDTO) {
         eleveDTO.setId(id);
         return eleveServiceImplementation.updateEleve(eleveDTO);
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @DeleteMapping("/eleves/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEleve(@PathVariable UUID id) {
