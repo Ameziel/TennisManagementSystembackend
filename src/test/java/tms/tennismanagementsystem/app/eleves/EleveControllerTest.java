@@ -2,36 +2,41 @@ package tms.tennismanagementsystem.app.eleves;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
-//@WebMvcTest(controllers = EleveControllerTest.class)
-//@ExtendWith(SpringExtension.class)
-@SpringBootTest
-@AutoConfigureMockMvc
+@WebMvcTest
+@SpringJUnitConfig(EleveControllerTest.class)
+@ContextConfiguration(classes = {EleveController.class})
 class EleveControllerTest {
-
     @Autowired
     private MockMvc mockMvc;
-
+    @MockBean
+    private EleveServiceImplementation eleveServiceImplementation;
     private String API_VERSION = "/api/v1";
     @Test
     void getAllEleves() throws Exception {
-
-        mockMvc.perform(get("/api/v1/eleves"))
+        //Toujours donner des données, voir s'il ne faut pas mettre un
+        mockMvc.perform(get(API_VERSION+ "/eleves"))
                 .andExpect(status().isOk());
+        verify(eleveServiceImplementation, times(1)).getAllEleves();
+
     }
 
     @Test

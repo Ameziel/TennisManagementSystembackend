@@ -153,7 +153,6 @@ public class EleveServiceImplementationTest {
             assertEquals(dataEleves.get(i).getId(), resultatDTO.get(i).getId());
         }
     }
-    //
     @Test
     @DisplayName("=================== test_findAllByEmail [Ok en In > Ok en OUT ] ====================")
     public void test_findAllByEmail() {
@@ -231,7 +230,7 @@ public class EleveServiceImplementationTest {
         when(eleveMapperImplementation.fromEleveEntity(any(EleveEntity.class))).thenCallRealMethod();
         when(eleveMapperImplementation.fromEleveDTO(any(EleveDTO.class))).thenCallRealMethod();
 
-        EleveDTO resultatDTO = eleveServiceImplementation.saveEleve(eleveExpected);
+        EleveDTO resultatDTO = eleveServiceImplementation.updateEleve(eleveExpected);
         eleveExpected.setEmail(EMAIL_CHANGING);
 //        System.out.println("Avant le service " + resultatDTO);
         resultatDTO = eleveServiceImplementation.saveEleve(resultatDTO);
