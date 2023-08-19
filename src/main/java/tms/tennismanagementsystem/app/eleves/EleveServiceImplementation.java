@@ -31,14 +31,13 @@ public class EleveServiceImplementation {
                         eleveEntity -> eleveMapperImplementation.fromEleveEntity(eleveEntity)).collect(Collectors.toList());
         return elevesDTOs;
     }
-
     public EleveDTO getEleveById(UUID id) throws EleveNotFoundException {
         EleveEntity eleve = eleveRepository.findById(id)
-                .orElseThrow(() -> new EleveNotFoundException("Eleve not found"));
+                .orElseThrow(() -> new EleveNotFoundException());
         return eleveMapperImplementation.fromEleveEntity(eleve);
     }
     public List<EleveDTO> searchElevesByNames(String keyword) {
-        List<EleveEntity> eleves = eleveRepository.searchElevesByName(keyword);
+        List<EleveEntity> eleves = eleveRepository.searchElevesByNames(keyword);
         List<EleveDTO> elevesDtos = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
         return elevesDtos;
     }
@@ -57,7 +56,6 @@ public class EleveServiceImplementation {
         List<EleveDTO> elevesInactifsDtos = elevesByEmail.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
         return elevesInactifsDtos;
     }
-
     /**
      * **************************************
      * *                                    *
