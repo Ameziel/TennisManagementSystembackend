@@ -17,13 +17,27 @@ public class EleveDTO {
     private String details;
     private boolean actif;
 
-    public EleveDTO(String margot, String iktoria, Genre genre, String s, String mail, LocalDate of, String loremIpsum, boolean b) {
+    public EleveDTO(UUID id, String prenom, String nom, Genre genre, String telephone, String email, LocalDate dateDeNaissance, String details, boolean actif) {
+        this.id = id;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.genre = genre;
+        this.telephone = telephone;
+        this.email = email;
+        this.dateDeNaissance = dateDeNaissance;
+        this.details = details;
+        this.actif = actif;
     }
-
-    public EleveDTO() {
-        
+    public EleveDTO(String prenom, String nom, Genre genre, String telephone, String email, LocalDate dateDeNaissance, String details, boolean actif) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.genre = genre;
+        this.telephone = telephone;
+        this.email = email;
+        this.dateDeNaissance = dateDeNaissance;
+        this.details = details;
+        this.actif = actif;
     }
-
-    public EleveDTO(UUID uuid, String addison, String mona, Genre genre, String s, String mail, LocalDate of, String loremIpsum, boolean b) {
+    public EleveDTO( ) {
     }
 }
