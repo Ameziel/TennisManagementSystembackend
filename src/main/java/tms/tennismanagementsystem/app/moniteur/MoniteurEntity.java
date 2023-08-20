@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tms.tennismanagementsystem.app.groupecours.GroupeCoursEntity;
 import tms.tennismanagementsystem.app.prestationcours.PrestationCoursEntity;
 
 import java.util.List;
@@ -27,8 +26,6 @@ public class MoniteurEntity {
     @Enumerated(EnumType.STRING)
     private QualificationMoniteur qualification;
     private boolean actif;
-    @OneToMany(mappedBy = "moniteurResponsable")
-    private List<GroupeCoursEntity> groupesCours;
     @OneToMany(mappedBy = "referenceMoniteur")
     private List<PrestationCoursEntity> prestationsCours;
 
