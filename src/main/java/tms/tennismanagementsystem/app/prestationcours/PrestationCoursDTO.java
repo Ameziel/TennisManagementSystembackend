@@ -9,6 +9,6 @@ import java.util.UUID;
 public class PrestationCoursDTO {
     private UUID id;
     private LocalDate datePrestation;
-    private Double coefficientDuree;
+    private Integer dureeSeanceMinutePrestation;
     private String commentaire;
 }
