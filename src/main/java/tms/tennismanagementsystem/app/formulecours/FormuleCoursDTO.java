@@ -8,18 +8,17 @@ import java.util.UUID;
 @Data
 public class FormuleCoursDTO {
     private UUID id;
-    private String libelle;
     private Integer effectifMaximum;
     private Integer nombreSeanceTotal;
     private Integer nombreSeanceHebdomadaire;
-    private Integer dureeSeanceMinute;
+    private Integer dureeSeanceMinuteFormuleCours;
     private Double tarif;
-    private Integer annee;
     private LocalDate dateDebut;
     private LocalDate dateFin;
-    private Periode periode;
-    private TypeBalle typeBalle;
-    private Niveau niveau;
+    private CategorieAge categorieAge;  //ENFANT,JEUNE,ADOLESCENT,ADULTE
+    private Periode periode;            //HIVER, ETE, ANNEE
+    private TypeBalle typeBalle;        //ROUGE, ORANGE, VERTE, JAUNE
+    private Niveau niveau;              //LOISIR, QUATRIEME_SERIE,TROISIEME_SERIE,DEUXIEME_SERIE
     private boolean actif;
 }
 
