@@ -8,6 +8,5 @@ import java.util.UUID;
 public class GroupeCoursDTO {
     private UUID id;
     private String libelle;
-    private Jour jour1;
-    private Jour jour2;
+    private boolean actif;
 }
