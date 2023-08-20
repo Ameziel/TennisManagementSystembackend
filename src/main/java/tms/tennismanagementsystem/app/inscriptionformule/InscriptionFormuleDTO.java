@@ -12,7 +12,9 @@ import java.util.UUID;
 public class InscriptionFormuleDTO {
     private UUID id;
     private LocalDate datePaiement;
-    private Double acompte;
+    private Double montantPercu;
+    private String notePaiement;
+    private MoyenPaiement moyenPaiement;
     private EleveDTO eleveDTO;
     private GroupeCoursDTO groupeCoursDTO;
     private FormuleCoursDTO formuleCoursDTO;
