@@ -39,4 +39,14 @@ public class MoniteurEntity {
         this.telephone = telephone;
         this.qualification = qualification;
     }
+
+    public MoniteurEntity(UUID id, String prenom, String nom, String email, String telephone, QualificationMoniteur qualification, boolean actif) {
+        this.id = id;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.email = email;
+        this.telephone = telephone;
+        this.qualification = qualification;
+        this.actif = actif;
+    }
 }
