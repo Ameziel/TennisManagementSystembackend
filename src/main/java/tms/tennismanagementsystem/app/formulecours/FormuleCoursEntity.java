@@ -18,36 +18,23 @@ public class FormuleCoursEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String libelle;
     private Integer effectifMaximum;
     private Integer nombreSeanceTotal;
     private Integer nombreSeanceHebdomadaire;
-    private Integer dureeSeanceMinute;
+    private Integer dureeSeanceMinuteFormuleCours;
     private Double tarif;
-    private Integer annee;
     private LocalDate dateDebut;
     private LocalDate dateFin;
-    @Enumerated(EnumType.STRING) // HIVER, ETE, ANNEE
-    private Periode periode;
     @Enumerated(EnumType.STRING)
-    private TypeBalle typeBalle;
+    private CategorieAge categorieAge;  //ENFANT,JEUNE,ADOLESCENT,ADULTE
     @Enumerated(EnumType.STRING)
-    private Niveau niveau;
+    private Periode periode;            //HIVER, ETE, ANNEE
+    @Enumerated(EnumType.STRING)
+    private TypeBalle typeBalle;        //ROUGE, ORANGE, VERTE, JAUNE
+    @Enumerated(EnumType.STRING)
+    private Niveau niveau;              //LOISIR, QUATRIEME_SERIE,TROISIEME_SERIE,DEUXIEME_SERIE
     private boolean actif;
     @OneToOne(mappedBy = "referenceFormule")
     private InscriptionFormuleEntity inscriptionFormuleEntity;
-    public FormuleCoursEntity(String libelle, int effectifMaximum, int nombreSeanceTotal, int nombreSeanceHebdomadaire,
-                              Integer dureeSeance, double tarif, int annee, LocalDate dateDebut, LocalDate dateFin, Periode periode, TypeBalle typeBalle) {
-        this.libelle = libelle;
-        this.effectifMaximum = effectifMaximum;
-        this.nombreSeanceTotal = nombreSeanceTotal;
-        this.nombreSeanceHebdomadaire = nombreSeanceHebdomadaire;
-        this.dureeSeanceMinute = dureeSeance;
-        this.tarif = tarif;
-        this.annee = annee;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.periode = periode;
-        this.typeBalle = typeBalle;
-    }
+
 }
