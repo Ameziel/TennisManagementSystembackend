@@ -20,10 +20,12 @@ public class PrestationCoursEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private LocalDate datePrestation;
-    private Double coefficientDuree;
+    private Integer dureeSeanceMinutePrestation;
     private String commentaire;
     @ManyToOne
+    @JoinColumn(name = "reference_groupe")
     private GroupeCoursEntity referenceGroupe;
     @ManyToOne
+    @JoinColumn(name = "reference_moniteur")
     private MoniteurEntity referenceMoniteur;
 }
