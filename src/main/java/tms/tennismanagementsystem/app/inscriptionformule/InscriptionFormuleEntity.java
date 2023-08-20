@@ -17,18 +17,22 @@ import java.util.UUID;
 @AllArgsConstructor
 @Table(name = "inscriptionsformule")
 public class InscriptionFormuleEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private Double montantPercu;
     private LocalDate datePaiement;
+    private Double montantPercu;
+    @Enumerated(EnumType.STRING)            //VIREMENT,LIQUIDE
+    private MoyenPaiement moyenPaiement;
     private String notePaiement;
     @ManyToOne
+    @JoinColumn(name = "reference_eleve")
     private EleveEntity referenceEleve;
     @OneToOne
+    @JoinColumn(name = "reference_groupe")
     private GroupeCoursEntity referenceGroupe;
     @OneToOne
+    @JoinColumn(name = "reference_formule")
     private FormuleCoursEntity referenceFormule;
 
 }
