@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import tms.tennismanagementsystem.app.inscriptionformule.InscriptionFormuleEntity;
+import tms.tennismanagementsystem.app.prestationcours.PrestationCoursEntity;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -21,4 +23,6 @@ public class GroupeCoursEntity {
     private boolean actif;
     @OneToMany
     private InscriptionFormuleEntity inscriptionFormuleEntity;
+    @OneToMany
+    private List<PrestationCoursEntity> prestationCoursEntityList;
 }
