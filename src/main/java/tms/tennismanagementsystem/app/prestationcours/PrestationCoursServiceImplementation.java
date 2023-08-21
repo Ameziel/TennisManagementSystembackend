@@ -16,7 +16,13 @@ public class PrestationCoursServiceImplementation implements PrestationCoursServ
 
     private PrestationCoursRepository prestationCoursRepository;
     private PrestationCoursMapperImplementation prestationCoursMapperImplementation;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public List<PrestationCoursDTO> getAllPrestationsCours() {
         List<PrestationCoursEntity> prestationCoursEntities = prestationCoursRepository.findAll();
@@ -31,17 +37,35 @@ public class PrestationCoursServiceImplementation implements PrestationCoursServ
                 .orElseThrow(() -> new PrestationCoursNotFoundException("PrestationCours not found"));
         return prestationCoursMapperImplementation.fromPrestationCoursEntity(prestationCoursEntity);
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public PrestationCoursDTO savePrestationCours(PrestationCoursDTO prestationCoursDTO) {
         return null;
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public PrestationCoursDTO updatePrestationCours(PrestationCoursDTO prestationCoursDTO) {
         return null;
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public void deletePrestationCoursDTO(UUID id) {
 

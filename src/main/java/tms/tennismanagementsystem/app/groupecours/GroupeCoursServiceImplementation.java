@@ -15,7 +15,13 @@ public class GroupeCoursServiceImplementation implements GroupeCoursService{
 
     private GroupeCoursRepository groupeCoursRepository;
     private GroupeCoursMapperImplementation groupeCoursMapperImplementation;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public List<GroupeCoursDTO> getAllGroupesCours() {
         List<GroupeCoursEntity> groupeCoursEntities = groupeCoursRepository.findAll();
@@ -30,14 +36,26 @@ public class GroupeCoursServiceImplementation implements GroupeCoursService{
                 .orElseThrow(() -> new GroupeCoursNotFoundException("GroupeCours not found"));
         return groupeCoursMapperImplementation.fromGroupeCoursEntity(groupeCoursEntity);
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public GroupeCoursDTO saveGroupeCours(GroupeCoursDTO groupeCoursDTO) {
         GroupeCoursEntity groupeCours = groupeCoursMapperImplementation.fromGroupeCoursDTO(groupeCoursDTO);
         GroupeCoursEntity savedGroupeCours = groupeCoursRepository.save(groupeCours);
         return groupeCoursMapperImplementation.fromGroupeCoursEntity(savedGroupeCours);
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public GroupeCoursDTO updateGroupeCours(GroupeCoursDTO groupeCoursDTO) {
         GroupeCoursEntity groupeCours = groupeCoursMapperImplementation.fromGroupeCoursDTO(groupeCoursDTO);
@@ -45,6 +63,13 @@ public class GroupeCoursServiceImplementation implements GroupeCoursService{
         return groupeCoursMapperImplementation.fromGroupeCoursEntity(savedGroupeCours);
     }
 
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public void deleteGroupeCours(UUID id) {
         groupeCoursRepository.deleteById(id); //TODO que s'il n'existe aucune prestation lié à ce groupe.

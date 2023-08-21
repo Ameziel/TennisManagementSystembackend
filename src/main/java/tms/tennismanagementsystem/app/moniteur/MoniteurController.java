@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import tms.tennismanagementsystem.app.moniteur.exceptions.MoniteurNotFoundException;
 
-
 import java.util.List;
 import java.util.UUID;
 
@@ -16,7 +15,13 @@ import java.util.UUID;
 public class MoniteurController {
 
     private MoniteurService moniteurService;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @GetMapping("/moniteurs")
     public List<MoniteurDTO> getAllEleves() {
         return moniteurService.getAllMoniteurs();
@@ -31,17 +36,38 @@ public class MoniteurController {
         return moniteurService.getMoniteurById(UUID.fromString(id));
     }
 
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/moniteurs")
     public MoniteurDTO save(@RequestBody MoniteurDTO moniteurDTO) {
         return moniteurService.saveMoniteur(moniteurDTO);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
 
-    @PostMapping("/moniteurs/{id}")
+    @PutMapping("/moniteurs/{id}")
     public MoniteurDTO updateEleve(@PathVariable UUID id, @RequestBody MoniteurDTO moniteurDTO) {
         moniteurDTO.setId(id);
         return moniteurService.updateMoniteur(moniteurDTO);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus()
     @DeleteMapping("/moniteurs/{id}")
     public void deleteEleve(@PathVariable UUID id) {

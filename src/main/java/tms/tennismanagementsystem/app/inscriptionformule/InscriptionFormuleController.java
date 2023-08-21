@@ -15,7 +15,13 @@ import java.util.UUID;
 public class InscriptionFormuleController {
 
     private InscriptionFormuleService inscriptionFormuleService;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @GetMapping("/inscriptionFormule")
     public List<InscriptionFormuleDTO> getAllEleves() {
         return inscriptionFormuleService.getAllInscriptionFormules();
@@ -25,17 +31,38 @@ public class InscriptionFormuleController {
     public InscriptionFormuleDTO getInscriptionFormule(@PathVariable(name = "id")String id) throws InscriptionFormuleNotFoundException {
         return inscriptionFormuleService.getInscriptionFormuleById(UUID.fromString(id));
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/inscriptionFormule")
     public InscriptionFormuleDTO save(@RequestBody InscriptionFormuleDTO inscriptionFormuleDTO) {
         return inscriptionFormuleService.saveInscriptionFormule(inscriptionFormuleDTO);
     }
 
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
     @PutMapping("/inscriptionFormule/{id}")
     public InscriptionFormuleDTO updateEleve(@PathVariable UUID id, @RequestBody InscriptionFormuleDTO inscriptionFormuleDTO) {
         inscriptionFormuleDTO.setId(id);
         return inscriptionFormuleService.updateInscriptionFormule(inscriptionFormuleDTO);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus()
     @DeleteMapping("/inscriptionFormule/{id}")
     public void deleteInscriptionFormule(@PathVariable UUID id) {

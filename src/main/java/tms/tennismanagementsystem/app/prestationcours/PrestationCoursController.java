@@ -15,7 +15,13 @@ import java.util.UUID;
 public class PrestationCoursController {
 
     private PrestationCoursService prestationCoursService;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @GetMapping("/prestationscours")
     public List<PrestationCoursDTO> getAllPrestationCours() {
         return prestationCoursService.getAllPrestationsCours();
@@ -30,17 +36,37 @@ public class PrestationCoursController {
         return prestationCoursService.getGPrestationCoursById(UUID.fromString(id));
     }
 
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/prestationscours")
     public PrestationCoursDTO save(@RequestBody PrestationCoursDTO prestationCoursDTO) {
         return prestationCoursService.savePrestationCours(prestationCoursDTO);
     }
-
-    @PostMapping("/prestationscours/{id}")
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
+    @PutMapping("/prestationscours/{id}")
     public PrestationCoursDTO updateEleve(@PathVariable UUID id, @RequestBody PrestationCoursDTO prestationCoursDTO) {
         prestationCoursDTO.setId(id);
         return prestationCoursService.updatePrestationCours(prestationCoursDTO);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus()
     @DeleteMapping("/prestationscours/{id}")
     public void deletePrestationCours(@PathVariable UUID id) {

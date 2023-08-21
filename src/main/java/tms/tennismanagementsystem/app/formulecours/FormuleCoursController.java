@@ -15,7 +15,13 @@ import java.util.UUID;
 public class FormuleCoursController {
 
     private FormuleCoursService formuleCoursService;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @GetMapping("/formulecours")
     public List<FormuleCoursDTO> getAllEleves() {
         return formuleCoursService.getAllFormulesCours();
@@ -26,18 +32,37 @@ public class FormuleCoursController {
         return formuleCoursService.getFormuleCoursById(UUID.fromString(id));
     }
 
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/formulecours")
     public FormuleCoursDTO save(@RequestBody FormuleCoursDTO formuleCoursDTO) {
         return formuleCoursService.saveFormuleCours(formuleCoursDTO);
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
     @PutMapping("/formulecours/{id}")
     public FormuleCoursDTO updateEleve(@PathVariable UUID id, @RequestBody FormuleCoursDTO formuleCoursDTO) {
         formuleCoursDTO.setId(id);
         return formuleCoursService.updateFormuleCours(formuleCoursDTO);
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus()
     @DeleteMapping("/formulecours/{id}")
     public void deleteFormuleCours(@PathVariable UUID id) {

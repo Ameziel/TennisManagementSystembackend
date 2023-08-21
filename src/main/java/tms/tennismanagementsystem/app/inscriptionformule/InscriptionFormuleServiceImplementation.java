@@ -16,7 +16,13 @@ public class InscriptionFormuleServiceImplementation implements InscriptionFormu
 
     private InscriptionFormuleRepository inscriptionFormuleRepository;
     private InscriptionFormuleMapperImplementation inscriptionFormuleMapperImplementation;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public List<InscriptionFormuleDTO> getAllInscriptionFormules() {
         List<InscriptionFormuleEntity> inscriptionFormuleEntities = inscriptionFormuleRepository.findAll();
@@ -32,18 +38,39 @@ public class InscriptionFormuleServiceImplementation implements InscriptionFormu
                 .orElseThrow(() -> new InscriptionFormuleNotFoundException("Inscription not found"));
         return inscriptionFormuleMapperImplementation.fromInscriptionFormuleEntity(inscriptionFormuleEntity);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public InscriptionFormuleDTO saveInscriptionFormule(InscriptionFormuleDTO inscriptionFormuleDTO) {
         InscriptionFormuleEntity inscriptionFormule = inscriptionFormuleMapperImplementation.fromInscriptionFormuleDTO(inscriptionFormuleDTO);
         InscriptionFormuleEntity savedInscriptionFormule = inscriptionFormuleRepository.save(inscriptionFormule);
         return inscriptionFormuleMapperImplementation.fromInscriptionFormuleEntity(savedInscriptionFormule);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public InscriptionFormuleDTO updateInscriptionFormule(InscriptionFormuleDTO inscriptionFormuleDTO) {
         InscriptionFormuleEntity inscriptionFormule = inscriptionFormuleMapperImplementation.fromInscriptionFormuleDTO(inscriptionFormuleDTO);
         InscriptionFormuleEntity savedInscriptionFormule = inscriptionFormuleRepository.save(inscriptionFormule);
         return inscriptionFormuleMapperImplementation.fromInscriptionFormuleEntity(savedInscriptionFormule);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public void deleteInscriptionFormuleDTO(UUID id) {
 inscriptionFormuleRepository.deleteById(id);

@@ -15,32 +15,53 @@ import java.util.UUID;
 public class GroupeCoursController {
 
     private GroupeCoursService groupeCoursService;
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @GetMapping("/groupecours")
     public List<GroupeCoursDTO> getAllGroupeCours() {
         return groupeCoursService.getAllGroupesCours();
     }
-//    @GetMapping("/groupecours/search")
-//    public List<GroupeCoursDTO> search(@RequestParam(name = "keyword", defaultValue = "") String keyword) {
-//        return prestationCoursService.searchMoniteursByNames("%"+keyword+"%");
-//    }
-
     @GetMapping("/groupecours/{id}")
     public GroupeCoursDTO getGroupeCours(@PathVariable(name = "id")String id) throws GroupeCoursNotFoundException {
         return groupeCoursService.getGroupeCoursById(UUID.fromString(id));
     }
-
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/groupecours")
     public GroupeCoursDTO save(@RequestBody GroupeCoursDTO groupeCoursDTO) {
         return groupeCoursService.saveGroupeCours(groupeCoursDTO);
     }
-
-    @PostMapping("/groupecours/{id}")
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
+    @PutMapping("/groupecours/{id}")
     public GroupeCoursDTO updateGroupeCours(@PathVariable UUID id, @RequestBody GroupeCoursDTO groupeCoursDTO) {
         groupeCoursDTO.setId(id);
         return groupeCoursService.updateGroupeCours(groupeCoursDTO);
     }
+
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @ResponseStatus()
     @DeleteMapping("/groupecours/{id}")
     public void deleteGroupeCours(@PathVariable UUID id) {

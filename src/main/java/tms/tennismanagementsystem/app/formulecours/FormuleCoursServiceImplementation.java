@@ -14,6 +14,13 @@ public class FormuleCoursServiceImplementation implements FormuleCoursService {
 
     private FormuleCoursRepository formuleCoursRepository;
     private FormuleCoursMapperImplementation formuleCoursMapperImplementation;
+    /**
+     * **************************************
+     * *                                    *
+     * *            GET Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public List<FormuleCoursDTO> getAllFormulesCours() {
         List<FormuleCoursEntity> formulesCoursEntities = formuleCoursRepository.findAll();
@@ -27,18 +34,39 @@ public class FormuleCoursServiceImplementation implements FormuleCoursService {
                 .orElseThrow(() -> new FormuleNotFoundException("Formule not found"));
         return formuleCoursMapperImplementation.fromFormuleCoursEntity(formuleCoursEntity);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *            POST Method             *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public FormuleCoursDTO saveFormuleCours(FormuleCoursDTO formuleCoursDTO) {
         FormuleCoursEntity formuleCoursEntity = formuleCoursMapperImplementation.fromFormuleCoursDTO(formuleCoursDTO);
         FormuleCoursEntity savedFormuleCours = formuleCoursRepository.save(formuleCoursEntity);
         return formuleCoursMapperImplementation.fromFormuleCoursEntity(savedFormuleCours);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *            PUT Method              *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public FormuleCoursDTO updateFormuleCours(FormuleCoursDTO formuleCoursDTO) {
         FormuleCoursEntity formuleCoursEntity = formuleCoursMapperImplementation.fromFormuleCoursDTO(formuleCoursDTO);
         FormuleCoursEntity savedFormuleCours = formuleCoursRepository.save(formuleCoursEntity);
         return formuleCoursMapperImplementation.fromFormuleCoursEntity(savedFormuleCours);
     }
+    /**
+     * **************************************
+     * *                                    *
+     * *           DELETE Method            *
+     * *                                    *
+     * **************************************
+     */
     @Override
     public void deleteFormuleCours(UUID id) {
         formuleCoursRepository.deleteById(id);
