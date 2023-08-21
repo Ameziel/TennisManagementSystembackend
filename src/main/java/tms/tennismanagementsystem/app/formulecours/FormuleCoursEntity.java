@@ -34,7 +34,7 @@ public class FormuleCoursEntity {
     @Enumerated(EnumType.STRING)
     private Niveau niveau;              //LOISIR, QUATRIEME_SERIE,TROISIEME_SERIE,DEUXIEME_SERIE
     private boolean actif;
-    @OneToOne(mappedBy = "referenceFormule")
+    @OneToMany(mappedBy = "referenceFormule")
     private InscriptionFormuleEntity inscriptionFormuleEntity;
 
 }

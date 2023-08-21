@@ -26,13 +26,14 @@ public class InscriptionFormuleEntity {
     private MoyenPaiement moyenPaiement;
     private String notePaiement;
     @ManyToOne
-    @JoinColumn(name = "reference_eleve")
+//    @JoinColumn(name = "reference_eleve")
     private EleveEntity referenceEleve;
-    @OneToOne
-    @JoinColumn(name = "reference_groupe")
-    private GroupeCoursEntity referenceGroupe;
     @OneToOne
     @JoinColumn(name = "reference_formule")
     private FormuleCoursEntity referenceFormule;
+    @ManyToOne
+    @JoinColumn(name = "reference_groupe")
+    private GroupeCoursEntity referenceGroupe;
+
 
 }

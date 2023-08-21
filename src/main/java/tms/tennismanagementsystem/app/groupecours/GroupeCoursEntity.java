@@ -19,6 +19,6 @@ public class GroupeCoursEntity {
     private UUID id;
     private String libelle;
     private boolean actif;
-    @OneToOne(mappedBy = "referenceGroupe")
+    @OneToMany
     private InscriptionFormuleEntity inscriptionFormuleEntity;
 }
