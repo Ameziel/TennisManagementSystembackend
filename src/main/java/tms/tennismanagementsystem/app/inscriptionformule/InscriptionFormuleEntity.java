@@ -25,14 +25,14 @@ public class InscriptionFormuleEntity {
     @Enumerated(EnumType.STRING)            //VIREMENT,LIQUIDE
     private MoyenPaiement moyenPaiement;
     private String notePaiement;
-    @OneToOne
-//    @JoinColumn(name = "reference_eleve")
+    @ManyToOne
+    @JoinColumn(name = "reference_eleve")
     private EleveEntity referenceEleve;
-    @OneToOne
-//    @JoinColumn(name = "reference_formule")
+    @ManyToOne
+    @JoinColumn(name = "reference_formule")
     private FormuleCoursEntity referenceFormule;
-    @OneToOne
-//    @JoinColumn(name = "reference_groupe")
+    @ManyToOne
+    @JoinColumn(name = "reference_groupe")
     private GroupeCoursEntity referenceGroupe;
 
 

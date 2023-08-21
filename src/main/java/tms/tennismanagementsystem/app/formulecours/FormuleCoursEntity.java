@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tms.tennismanagementsystem.app.inscriptionformule.InscriptionFormuleEntity;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -34,7 +33,7 @@ public class FormuleCoursEntity {
     @Enumerated(EnumType.STRING)
     private Niveau niveau;              //LOISIR, QUATRIEME_SERIE,TROISIEME_SERIE,DEUXIEME_SERIE
     private boolean actif;
-    @OneToMany(mappedBy = "referenceFormule")
-    private InscriptionFormuleEntity inscriptionFormuleEntity;
+//    @OneToMany(mappedBy = "referenceFormule")   //Peut etre pas nécessaire ?
+//    private InscriptionFormuleEntity inscriptionFormuleEntity;
 
 }
