@@ -9,6 +9,7 @@ public class PrestationCoursMapperImplementation {
     public PrestationCoursDTO fromPrestationCoursEntity(PrestationCoursEntity prestationCoursEntity) {
         PrestationCoursDTO prestationCoursDTO = new PrestationCoursDTO();
         BeanUtils.copyProperties(prestationCoursEntity, prestationCoursDTO);
+        prestationCoursDTO.setReferenceMoniteur(prestationCoursEntity.getReferenceMoniteur().getId());
         return prestationCoursDTO;
     }
     public PrestationCoursEntity fromPrestationCoursDTO(PrestationCoursDTO prestationCoursDTO) {
