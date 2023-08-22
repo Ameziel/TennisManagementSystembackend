@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.inscriptionformule.exceptions;
+package tms.tennismanagementsystem.app.inscriptionsformule.exceptions;
 
 public class InscriptionFormuleNotFoundException extends Exception {
     public InscriptionFormuleNotFoundException(String message) {

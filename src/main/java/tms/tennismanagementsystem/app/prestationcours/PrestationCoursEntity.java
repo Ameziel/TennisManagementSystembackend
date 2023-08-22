@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tms.tennismanagementsystem.app.groupecours.GroupeCoursEntity;
+import tms.tennismanagementsystem.app.groupescours.GroupeCoursEntity;
 import tms.tennismanagementsystem.app.moniteur.MoniteurEntity;
 
 import java.time.LocalDate;

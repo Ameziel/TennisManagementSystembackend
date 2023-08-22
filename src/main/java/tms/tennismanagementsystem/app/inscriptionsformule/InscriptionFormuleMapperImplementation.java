@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.inscriptionformule;
+package tms.tennismanagementsystem.app.inscriptionsformule;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

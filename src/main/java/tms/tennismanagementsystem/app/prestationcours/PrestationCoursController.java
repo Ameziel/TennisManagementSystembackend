@@ -3,6 +3,7 @@ package tms.tennismanagementsystem.app.prestationcours;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import tms.tennismanagementsystem.app.moniteur.exceptions.MoniteurNotFoundException;
 import tms.tennismanagementsystem.app.prestationcours.exceptions.PrestationCoursNotFoundException;
 
 import java.util.List;
@@ -23,16 +24,12 @@ public class PrestationCoursController {
      * **************************************
      */
     @GetMapping("/prestationscours")
-    public List<PrestationCoursDTO> getAllPrestationCours() {
+    public List<PrestationCoursDTO> getAllPrestationsCours() {
         return prestationCoursService.getAllPrestationsCours();
     }
-//    @GetMapping("/prestationscours/search") //Mettre recherche par moniteur
-//    public List<MoniteurDTO> search(@RequestParam(name = "keyword", defaultValue = "") String keyword) {
-//        return prestationCoursService.searchMoniteursByNames("%"+keyword+"%");
-//    }
 
     @GetMapping("/prestationscours/{id}")
-    public PrestationCoursDTO getPrestationCours(@PathVariable(name = "id")String id) throws PrestationCoursNotFoundException {
+    public PrestationCoursDTO getPrestationCoursById(@PathVariable(name = "id")String id) throws PrestationCoursNotFoundException {
         return prestationCoursService.getGPrestationCoursById(UUID.fromString(id));
     }
 
@@ -45,7 +42,7 @@ public class PrestationCoursController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/prestationscours")
-    public PrestationCoursDTO save(@RequestBody PrestationCoursDTO prestationCoursDTO) {
+    public PrestationCoursDTO savePrestationCours(@RequestBody PrestationCoursDTO prestationCoursDTO) throws MoniteurNotFoundException {
         return prestationCoursService.savePrestationCours(prestationCoursDTO);
     }
     /**
@@ -56,7 +53,7 @@ public class PrestationCoursController {
      * **************************************
      */
     @PutMapping("/prestationscours/{id}")
-    public PrestationCoursDTO updateEleve(@PathVariable UUID id, @RequestBody PrestationCoursDTO prestationCoursDTO) {
+    public PrestationCoursDTO updatePrestationCours(@PathVariable UUID id, @RequestBody PrestationCoursDTO prestationCoursDTO) {
         prestationCoursDTO.setId(id);
         return prestationCoursService.updatePrestationCours(prestationCoursDTO);
     }

@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.inscriptionformule;
+package tms.tennismanagementsystem.app.inscriptionsformule;
 
 import org.junit.jupiter.api.Test;
 

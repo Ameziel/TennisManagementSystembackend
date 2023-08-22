@@ -23,7 +23,7 @@ public class FormuleCoursController {
      * **************************************
      */
     @GetMapping("/formulecours")
-    public List<FormuleCoursDTO> getAllEleves() {
+    public List<FormuleCoursDTO> getAllFormulesCours() {
         return formuleCoursService.getAllFormulesCours();
     }
 
@@ -41,7 +41,7 @@ public class FormuleCoursController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/formulecours")
-    public FormuleCoursDTO save(@RequestBody FormuleCoursDTO formuleCoursDTO) {
+    public FormuleCoursDTO saveFormuleCours(@RequestBody FormuleCoursDTO formuleCoursDTO) {
         return formuleCoursService.saveFormuleCours(formuleCoursDTO);
     }
     /**
@@ -52,7 +52,7 @@ public class FormuleCoursController {
      * **************************************
      */
     @PutMapping("/formulecours/{id}")
-    public FormuleCoursDTO updateEleve(@PathVariable UUID id, @RequestBody FormuleCoursDTO formuleCoursDTO) {
+    public FormuleCoursDTO updateFormuleCours(@PathVariable UUID id, @RequestBody FormuleCoursDTO formuleCoursDTO) {
         formuleCoursDTO.setId(id);
         return formuleCoursService.updateFormuleCours(formuleCoursDTO);
     }

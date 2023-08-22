@@ -23,16 +23,12 @@ public class MoniteurController {
      * **************************************
      */
     @GetMapping("/moniteurs")
-    public List<MoniteurDTO> getAllEleves() {
+    public List<MoniteurDTO> getAllMoniteurs() {
         return moniteurService.getAllMoniteurs();
-    }
-    @GetMapping("/moniteurs/search")
-    public List<MoniteurDTO> searchEleve(@RequestParam(name = "keyword", defaultValue = "") String keyword) {
-        return moniteurService.searchMoniteursByNames("%"+keyword+"%");
     }
 
     @GetMapping("/moniteurs/{id}")
-    public MoniteurDTO getEleve(@PathVariable(name = "id")String id) throws MoniteurNotFoundException {
+    public MoniteurDTO getMoniteurById(@PathVariable(name = "id")String id) throws MoniteurNotFoundException {
         return moniteurService.getMoniteurById(UUID.fromString(id));
     }
 
@@ -45,7 +41,7 @@ public class MoniteurController {
      */
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/moniteurs")
-    public MoniteurDTO save(@RequestBody MoniteurDTO moniteurDTO) {
+    public MoniteurDTO saveMoniteur(@RequestBody MoniteurDTO moniteurDTO) {
         return moniteurService.saveMoniteur(moniteurDTO);
     }
     /**
@@ -57,7 +53,7 @@ public class MoniteurController {
      */
 
     @PutMapping("/moniteurs/{id}")
-    public MoniteurDTO updateEleve(@PathVariable UUID id, @RequestBody MoniteurDTO moniteurDTO) {
+    public MoniteurDTO updateMoniteur(@PathVariable UUID id, @RequestBody MoniteurDTO moniteurDTO) {
         moniteurDTO.setId(id);
         return moniteurService.updateMoniteur(moniteurDTO);
     }
@@ -70,7 +66,7 @@ public class MoniteurController {
      */
     @ResponseStatus()
     @DeleteMapping("/moniteurs/{id}")
-    public void deleteEleve(@PathVariable UUID id) {
+    public void deleteMoniteur(@PathVariable UUID id) {
         moniteurService.deleteMoniteur(id);
     }
 }

@@ -1,20 +1,20 @@
   INSERT INTO eleves (id,date_de_naissance,details,email,actif,genre,nom,prenom,telephone)
   VALUES
-  ('5FD2CE6E-7358-204F-E15E-C8D9982160F9','28/04/2000','Lorem ipsum','augue.id@outlook.ca','true','F','Addison','Mona','04 12 15 89 88'),
-  ('3CB059BE-CC68-FA22-CB7C-1C47801D7EEF','25/05/1993','Lorem ipsum','augue.id@outlook.ca','false','H','Jennifer','Armand','02 85 07 68 20'),
-  ('936AC4C1-B9A5-9640-1517-3CD1D931B995','21/03/2004','Lorem','vehicula.aliquet@outlook.couk','true','H','Noble','Murphy','07 39 86 63 88'),
-  ('2D16475C-8CE5-B684-D87E-839147CBC96E','12/10/1996','Lorem ipsum','arcu@hotmail.couk','true','F','Dustin','Carson','06 52 61 36 51'),
-  ('4A8C1645-8D67-6527-1688-C1D13C129F6C','09/11/1991','Lorem ipsum dolor sit amet, consectetuer','tellus.non@protonmail.couk','true','F','Jared','Trevor','09 67 36 72 26'),
-  ('93E6DE8D-C30F-6342-FEB1-7BDE5D237DA9','30/07/1995','Lorem ipsum dolor sit amet, consectetuer adipiscing','non.nisi@yahoo.couk','false','H','Tasha','Brielle','01 46 45 50 86'),
-  ('A747AD47-7232-6909-0BDD-E9B7A29293E8','01/07/1996','Lorem','ultrices.sit@icloud.ca','true','F','Gabriel','Morgan','07 25 17 48 86'),
-  ('616CDE31-E357-1637-5FDE-3571ECA81C1C','10/06/2001','Lorem ipsum dolor sit','metus.in@aol.org','false','H','Debra','Moana','04 94 22 51 02'),
-  ('2BB36E57-DED7-A363-7BF9-FCC3DA87988B','08/07/1994','Lorem ipsum dolor sit amet,','praesent.eu.dui@protonmail.com','false','H','Bo','Ella','08 13 63 30 63'),
-  ('489C1E5D-764C-0A4C-5E47-68A99DB2A505','16/10/2003','Lorem ipsum','diam.proin@hotmail.org','false','H','Aurora','Elaine','07 52 12 21 67'),
-  ('7B91A893-80B4-8F24-FE1B-04B532D78EE0','13/11/2003','Lorem','mi.enim@aol.com','false','F','Jermaine','Amethyst','04 43 21 57 70'),
-  ('383CE3BC-D6D3-C2B2-77A6-45ABE3877D9C','08/11/1991','Lorem','semper.egestas@outlook.edu','false','F','Larissa','Lois','07 71 18 78 64'),
-  ('2BB17ACD-5818-E053-E92F-B22D6B889A10','15/12/2004','Lorem ipsum dolor','neque.nullam@protonmail.edu','true','H','Damian','Cameron','07 83 11 44 62'),
-  ('61338D6E-9CE5-D946-8D26-A13657DE7CBA','29/03/2000','Lorem ipsum','in.aliquet@hotmail.net','true','H','Nissim','Odette','08 84 56 57 86'),
-  ('1AB24CB6-AF24-9157-735E-271984A15B77','19/01/2004','Lorem ipsum dolor sit amet, consectetuer adipiscing','mauris@hotmail.com','false','F','Mara','Ruby','05 65 31 96 64');
+  ('5FD2CE6E-7358-204F-E15E-C8D9982160F9','28/04/2000','Lorem ipsum','augue.id@outlook.ca','true','F','addison','mona','04 12 15 89 88'),
+  ('3CB059BE-CC68-FA22-CB7C-1C47801D7EEF','25/05/1993','Lorem ipsum','augue.id@outlook.ca','false','H','aennifer','armand','02 85 07 68 20'),
+  ('936AC4C1-B9A5-9640-1517-3CD1D931B995','21/03/2004','Lorem','vehicula.aliquet@outlook.couk','true','H','aoble','murphy','07 39 86 63 88'),
+  ('2D16475C-8CE5-B684-D87E-839147CBC96E','12/10/1996','Lorem ipsum','arcu@hotmail.couk','true','F','austin','carson','06 52 61 36 51'),
+  ('4A8C1645-8D67-6527-1688-C1D13C129F6C','09/11/1991','Lorem ipsum dolor sit amet, consectetuer','tellus.non@protonmail.couk','true','F','jared','trevor','09 67 36 72 26'),
+  ('93E6DE8D-C30F-6342-FEB1-7BDE5D237DA9','30/07/1995','Lorem ipsum dolor sit amet, consectetuer adipiscing','non.nisi@yahoo.couk','false','H','tasha','brielle','01 46 45 50 86'),
+  ('A747AD47-7232-6909-0BDD-E9B7A29293E8','01/07/1996','Lorem','ultrices.sit@icloud.ca','true','F','gabriel','morgan','07 25 17 48 86'),
+  ('616CDE31-E357-1637-5FDE-3571ECA81C1C','10/06/2001','Lorem ipsum dolor sit','metus.in@aol.org','false','H','debra','moana','04 94 22 51 02'),
+  ('2BB36E57-DED7-A363-7BF9-FCC3DA87988B','08/07/1994','Lorem ipsum dolor sit amet,','praesent.eu.dui@protonmail.com','false','H','bo','ella','08 13 63 30 63'),
+  ('489C1E5D-764C-0A4C-5E47-68A99DB2A505','16/10/2003','Lorem ipsum','diam.proin@hotmail.org','false','H','aurora','elaine','07 52 12 21 67'),
+  ('7B91A893-80B4-8F24-FE1B-04B532D78EE0','13/11/2003','Lorem','mi.enim@aol.com','false','F','jermaine','amethyst','04 43 21 57 70'),
+  ('383CE3BC-D6D3-C2B2-77A6-45ABE3877D9C','08/11/1991','Lorem','semper.egestas@outlook.edu','false','F','larissa','lois','07 71 18 78 64'),
+  ('2BB17ACD-5818-E053-E92F-B22D6B889A10','15/12/2004','Lorem ipsum dolor','neque.nullam@protonmail.edu','true','H','damian','cameron','07 83 11 44 62'),
+  ('61338D6E-9CE5-D946-8D26-A13657DE7CBA','29/03/2000','Lorem ipsum','in.aliquet@hotmail.net','true','H','nissim','odette','08 84 56 57 86'),
+  ('1AB24CB6-AF24-9157-735E-271984A15B77','19/01/2004','Lorem ipsum dolor sit amet, consectetuer adipiscing','mauris@hotmail.com','false','F','mara','ruby','05 65 31 96 64');
 
       INSERT INTO moniteurs (id,actif,email,nom,prenom,qualification,telephone)
       VALUES
@@ -32,7 +32,7 @@
     VALUES
     ('9F9DAD95-9FAD-0B87-8452-67035E83345B',4,25,1,60,350.00,'11/09/2023','05/02/2024','HIVER','JAUNE','LOISIR','true','ADULTE'),
     ('57FDE1D9-877A-DD4C-7736-1DA9E947E544',4,8,1,60,180.00,'11/04/2024','05/06/2024','ETE','JAUNE','LOISIR','true','ADULTE'),
-    ('371E7276-427B-7D8C-3564-3894D752D186',4,28,1,60,420.00,'11/09/2023','04/05/2024','ANNEE','JAUNE','QUATRIME_SERIE','true','ADULTE'),
+    ('371E7276-427B-7D8C-3564-3894D752D186',4,28,1,60,420.00,'11/09/2023','04/05/2024','ANNEE','JAUNE','QUATRIEME_SERIE','true','ADULTE'),
     ('E289A9C2-9429-870B-C3A1-9B1AAD135D7A',4,30,1,60,450.00,'23/09/2023','03/05/2024','ANNEE', 'JAUNE','TROISIEME_SERIE','true','ADULTE'),
     ('790D38B8-1EAE-BFF5-5F65-DD51722A9B55',4,25,1,60,380.00,'15/09/2023','02/05/2024','ANNEE','JAUNE','DEUXIEME_SERIE','true','ADULTE'),
     ('4BC58C7A-5698-8D22-D8B4-57C48113400A',2,22,1,60,330.00,'18/09/2023','02/05/2024','ANNEE', 'JAUNE','LOISIR','true','ADULTE'),

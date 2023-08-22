@@ -1,9 +1,9 @@
-package tms.tennismanagementsystem.app.inscriptionformule;
+package tms.tennismanagementsystem.app.inscriptionsformule;
 
 import lombok.Data;
 import tms.tennismanagementsystem.app.eleves.EleveDTO;
 import tms.tennismanagementsystem.app.formulecours.FormuleCoursDTO;
-import tms.tennismanagementsystem.app.groupecours.GroupeCoursDTO;
+import tms.tennismanagementsystem.app.groupescours.GroupeCoursDTO;
 
 import java.time.LocalDate;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.inscriptionformule;
+package tms.tennismanagementsystem.app.inscriptionsformule;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import tms.tennismanagementsystem.app.eleves.EleveEntity;
 import tms.tennismanagementsystem.app.formulecours.FormuleCoursEntity;
-import tms.tennismanagementsystem.app.groupecours.GroupeCoursEntity;
+import tms.tennismanagementsystem.app.groupescours.GroupeCoursEntity;
 
 import java.time.LocalDate;
 import java.util.UUID;
