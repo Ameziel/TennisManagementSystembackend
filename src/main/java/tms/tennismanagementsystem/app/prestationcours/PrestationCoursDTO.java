@@ -11,5 +11,5 @@ public class PrestationCoursDTO {
     private LocalDate datePrestation;
     private Integer dureeSeanceMinutePrestation;
     private String commentaire;
-    private UUID referenceMoniteur; //TODO FIX
+    private UUID referenceMoniteur;
 }
