@@ -30,7 +30,7 @@ public class InscriptionFormuleEntity {
     private EleveEntity referenceEleve;
     @ManyToOne
     @JoinColumn(name = "reference_formule")
-    private FormuleCoursEntity referenceFormule;
+    private FormuleCoursEntity referenceFormuleCours;
     @ManyToOne
     @JoinColumn(name = "reference_groupe")
     private GroupeCoursEntity referenceGroupe;
