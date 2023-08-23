@@ -22,12 +22,12 @@ public class FormuleCoursController {
      * *                                    *
      * **************************************
      */
-    @GetMapping("/formulecours")
+    @GetMapping("/formulescours")
     public List<FormuleCoursDTO> getAllFormulesCours() {
         return formuleCoursService.getAllFormulesCours();
     }
 
-    @GetMapping("/formulecours/{id}")
+    @GetMapping("/formulescours/{id}")
     public FormuleCoursDTO getFormulecours(@PathVariable(name = "id") UUID id) throws FormuleNotFoundException {
         return formuleCoursService.getFormuleCoursById((id));
     }
@@ -40,7 +40,7 @@ public class FormuleCoursController {
      * **************************************
      */
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/formulecours")
+    @PostMapping("/formulescours")
     public FormuleCoursDTO saveFormuleCours(@RequestBody FormuleCoursDTO formuleCoursDTO) {
         return formuleCoursService.saveFormuleCours(formuleCoursDTO);
     }
@@ -51,7 +51,7 @@ public class FormuleCoursController {
      * *                                    *
      * **************************************
      */
-    @PutMapping("/formulecours/{id}")
+    @PutMapping("/formulescours/{id}")
     public FormuleCoursDTO updateFormuleCours(@PathVariable UUID id, @RequestBody FormuleCoursDTO formuleCoursDTO) {
         formuleCoursDTO.setId(id);
         return formuleCoursService.updateFormuleCours(formuleCoursDTO);
@@ -64,7 +64,7 @@ public class FormuleCoursController {
      * **************************************
      */
     @ResponseStatus()
-    @DeleteMapping("/formulecours/{id}")
+    @DeleteMapping("/formulescours/{id}")
     public void deleteFormuleCours(@PathVariable UUID id) {
         formuleCoursService.deleteFormuleCours(id);
     }
