@@ -27,8 +27,8 @@ public class EleveController {
         return eleveServiceImplementation.getAllEleves();
     }
     @GetMapping("/eleves/{id}")
-    public EleveDTO getEleveById(@PathVariable(name = "id")String id) throws EleveNotFoundException {
-        return eleveServiceImplementation.getEleveById(UUID.fromString(id));
+    public EleveDTO getEleveById(@PathVariable(name = "id")UUID id) throws EleveNotFoundException {
+        return eleveServiceImplementation.getEleveById((id));
     }
     @GetMapping("/eleves/search")
     public List<EleveDTO> searchEleveByNames(@RequestParam (name = "keyword", defaultValue = "") String keyword) {

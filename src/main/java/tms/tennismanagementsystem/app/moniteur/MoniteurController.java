@@ -28,8 +28,8 @@ public class MoniteurController {
     }
 
     @GetMapping("/moniteurs/{id}")
-    public MoniteurDTO getMoniteurById(@PathVariable(name = "id")String id) throws MoniteurNotFoundException {
-        return moniteurService.getMoniteurById(UUID.fromString(id));
+    public MoniteurDTO getMoniteurById(@PathVariable(name = "id")UUID id) throws MoniteurNotFoundException {
+        return moniteurService.getMoniteurById((id));
     }
 
     /**

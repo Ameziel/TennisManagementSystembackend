@@ -28,8 +28,8 @@ public class InscriptionFormuleController {
     }
 
     @GetMapping("/inscriptionFormule/{id}")
-    public InscriptionFormuleDTO getInscriptionFormule(@PathVariable(name = "id")String id) throws InscriptionFormuleNotFoundException {
-        return inscriptionFormuleService.getInscriptionFormuleById(UUID.fromString(id));
+    public InscriptionFormuleDTO getInscriptionFormule(@PathVariable(name = "id")UUID id) throws InscriptionFormuleNotFoundException {
+        return inscriptionFormuleService.getInscriptionFormuleById((id));
     }
     /**
      * **************************************

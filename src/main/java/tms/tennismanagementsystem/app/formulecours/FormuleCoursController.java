@@ -28,8 +28,8 @@ public class FormuleCoursController {
     }
 
     @GetMapping("/formulecours/{id}")
-    public FormuleCoursDTO getFormulecours(@PathVariable(name = "id") String id) throws FormuleNotFoundException {
-        return formuleCoursService.getFormuleCoursById(UUID.fromString(id));
+    public FormuleCoursDTO getFormulecours(@PathVariable(name = "id") UUID id) throws FormuleNotFoundException {
+        return formuleCoursService.getFormuleCoursById((id));
     }
 
     /**

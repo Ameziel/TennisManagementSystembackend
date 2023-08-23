@@ -29,8 +29,8 @@ public class PrestationCoursController {
     }
 
     @GetMapping("/prestationscours/{id}")
-    public PrestationCoursDTO getPrestationCoursById(@PathVariable(name = "id")String id) throws PrestationCoursNotFoundException {
-        return prestationCoursService.getGPrestationCoursById(UUID.fromString(id));
+    public PrestationCoursDTO getPrestationCoursById(@PathVariable(name = "id")UUID id) throws PrestationCoursNotFoundException {
+        return prestationCoursService.getGPrestationCoursById((id));
     }
 
     /**
