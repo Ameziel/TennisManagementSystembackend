@@ -1,9 +1,9 @@
-package tms.tennismanagementsystem.app.groupecours;
+package tms.tennismanagementsystem.app.groupescours;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tms.tennismanagementsystem.app.groupecours.exceptions.GroupeCoursNotFoundException;
+import tms.tennismanagementsystem.app.groupescours.exceptions.GroupeCoursNotFoundException;
 
 import java.util.List;
 import java.util.UUID;
@@ -33,7 +33,7 @@ public class GroupeCoursServiceImplementation implements GroupeCoursService{
     @Override
     public GroupeCoursDTO getGroupeCoursById(UUID id) throws GroupeCoursNotFoundException {
         GroupeCoursEntity groupeCoursEntity = groupeCoursRepository.findById(id)
-                .orElseThrow(() -> new GroupeCoursNotFoundException("GroupeCours not found"));
+                .orElseThrow(() -> new GroupeCoursNotFoundException());
         return groupeCoursMapperImplementation.fromGroupeCoursEntity(groupeCoursEntity);
     }
     /**
@@ -72,6 +72,6 @@ public class GroupeCoursServiceImplementation implements GroupeCoursService{
      */
     @Override
     public void deleteGroupeCours(UUID id) {
-        groupeCoursRepository.deleteById(id); //TODO que s'il n'existe aucune prestation lié à ce groupe.
+        groupeCoursRepository.deleteById(id);
     }
 }

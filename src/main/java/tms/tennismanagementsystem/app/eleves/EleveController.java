@@ -43,7 +43,7 @@ public class EleveController {
         return eleveServiceImplementation.getAllInactifsEleves();
     }
     @GetMapping("/eleves/email")
-    public List<EleveDTO> getAllByEmails(@RequestParam (name = "email", defaultValue = "") String email) {
+    public List<EleveDTO> getAllElevesByEmails(@RequestParam (name = "email", defaultValue = "") String email) {
         return eleveServiceImplementation.findAllByEmail(email);
     }
     /**
@@ -55,7 +55,7 @@ public class EleveController {
      */
     @PostMapping("/eleves")
     @ResponseStatus(HttpStatus.CREATED)
-    public EleveDTO save(@RequestBody EleveDTO eleveDTO) {
+    public EleveDTO saveEleve(@RequestBody EleveDTO eleveDTO) {
         return eleveServiceImplementation.saveEleve(eleveDTO);
     }
     /**

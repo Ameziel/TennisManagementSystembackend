@@ -34,7 +34,7 @@ public class PrestationCoursServiceImplementation implements PrestationCoursServ
     @Override
     public PrestationCoursDTO getGPrestationCoursById(UUID id) throws PrestationCoursNotFoundException {
         PrestationCoursEntity prestationCoursEntity = prestationCoursRepository.findById(id)
-                .orElseThrow(() -> new PrestationCoursNotFoundException("PrestationCours not found"));
+                .orElseThrow(() -> new PrestationCoursNotFoundException());
         return prestationCoursMapperImplementation.fromPrestationCoursEntity(prestationCoursEntity);
     }
     /**
@@ -45,8 +45,10 @@ public class PrestationCoursServiceImplementation implements PrestationCoursServ
      * **************************************
      */
     @Override
-    public PrestationCoursDTO savePrestationCours(PrestationCoursDTO prestationCoursDTO) {
-        return null;
+    public PrestationCoursDTO savePrestationCours(PrestationCoursDTO prestationCoursDTO)  {
+        PrestationCoursEntity prestationCours = prestationCoursMapperImplementation.fromPrestationCoursDTO(prestationCoursDTO);
+        PrestationCoursEntity savedPrestationEntity = prestationCoursRepository.save(prestationCours);
+        return prestationCoursMapperImplementation.fromPrestationCoursEntity(savedPrestationEntity);
     }
     /**
      * **************************************
@@ -57,7 +59,10 @@ public class PrestationCoursServiceImplementation implements PrestationCoursServ
      */
     @Override
     public PrestationCoursDTO updatePrestationCours(PrestationCoursDTO prestationCoursDTO) {
-        return null;
+
+        PrestationCoursEntity prestationCours = prestationCoursMapperImplementation.fromPrestationCoursDTO(prestationCoursDTO);
+        PrestationCoursEntity savedPrestationEntity = prestationCoursRepository.save(prestationCours);
+        return prestationCoursMapperImplementation.fromPrestationCoursEntity(savedPrestationEntity);
     }
     /**
      * **************************************
@@ -68,6 +73,6 @@ public class PrestationCoursServiceImplementation implements PrestationCoursServ
      */
     @Override
     public void deletePrestationCoursDTO(UUID id) {
-
+        prestationCoursRepository.deleteById(id);
     }
 }

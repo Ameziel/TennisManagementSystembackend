@@ -1,11 +1,12 @@
-package tms.tennismanagementsystem.app.groupecours;
+package tms.tennismanagementsystem.app.groupescours;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import tms.tennismanagementsystem.app.inscriptionformule.InscriptionFormuleEntity;
+import tms.tennismanagementsystem.app.inscriptionsformule.InscriptionFormuleEntity;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -19,6 +20,8 @@ public class GroupeCoursEntity {
     private UUID id;
     private String libelle;
     private boolean actif;
-    @OneToOne(mappedBy = "referenceGroupe")
-    private InscriptionFormuleEntity inscriptionFormuleEntity;
+    @OneToMany(mappedBy = "referenceGroupe")
+    private List<InscriptionFormuleEntity> inscriptionFormuleEntity;
+//    @OneToMany      //Pas nécessaire ?
+//    private List<PrestationCoursEntity> prestationCoursEntityList;
 }

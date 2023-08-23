@@ -1,6 +1,6 @@
-package tms.tennismanagementsystem.app.groupecours;
+package tms.tennismanagementsystem.app.groupescours;
 
-import tms.tennismanagementsystem.app.groupecours.exceptions.GroupeCoursNotFoundException;
+import tms.tennismanagementsystem.app.groupescours.exceptions.GroupeCoursNotFoundException;
 
 import java.util.List;
 import java.util.UUID;

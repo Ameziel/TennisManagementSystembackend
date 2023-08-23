@@ -1,9 +1,9 @@
-package tms.tennismanagementsystem.app.groupecours;
+package tms.tennismanagementsystem.app.groupescours;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import tms.tennismanagementsystem.app.groupecours.exceptions.GroupeCoursNotFoundException;
+import tms.tennismanagementsystem.app.groupescours.exceptions.GroupeCoursNotFoundException;
 
 import java.util.List;
 import java.util.UUID;
@@ -22,11 +22,11 @@ public class GroupeCoursController {
      * *                                    *
      * **************************************
      */
-    @GetMapping("/groupecours")
-    public List<GroupeCoursDTO> getAllGroupeCours() {
+    @GetMapping("/groupescours")
+    public List<GroupeCoursDTO> getAllGroupesCours() {
         return groupeCoursService.getAllGroupesCours();
     }
-    @GetMapping("/groupecours/{id}")
+    @GetMapping("/groupescours/{id}")
     public GroupeCoursDTO getGroupeCours(@PathVariable(name = "id")String id) throws GroupeCoursNotFoundException {
         return groupeCoursService.getGroupeCoursById(UUID.fromString(id));
     }
@@ -38,8 +38,8 @@ public class GroupeCoursController {
      * **************************************
      */
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/groupecours")
-    public GroupeCoursDTO save(@RequestBody GroupeCoursDTO groupeCoursDTO) {
+    @PostMapping("/groupescours")
+    public GroupeCoursDTO saveGroupeCours(@RequestBody GroupeCoursDTO groupeCoursDTO) {
         return groupeCoursService.saveGroupeCours(groupeCoursDTO);
     }
     /**
@@ -49,7 +49,7 @@ public class GroupeCoursController {
      * *                                    *
      * **************************************
      */
-    @PutMapping("/groupecours/{id}")
+    @PutMapping("/groupescours/{id}")
     public GroupeCoursDTO updateGroupeCours(@PathVariable UUID id, @RequestBody GroupeCoursDTO groupeCoursDTO) {
         groupeCoursDTO.setId(id);
         return groupeCoursService.updateGroupeCours(groupeCoursDTO);
@@ -63,7 +63,7 @@ public class GroupeCoursController {
      * **************************************
      */
     @ResponseStatus()
-    @DeleteMapping("/groupecours/{id}")
+    @DeleteMapping("/groupescours/{id}")
     public void deleteGroupeCours(@PathVariable UUID id) {
         groupeCoursService.deleteGroupeCours(id);
     }

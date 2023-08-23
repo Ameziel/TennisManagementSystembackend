@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.groupecours;
+package tms.tennismanagementsystem.app.groupescours;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

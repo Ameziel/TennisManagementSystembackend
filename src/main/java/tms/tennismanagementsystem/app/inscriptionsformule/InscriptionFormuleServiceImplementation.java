@@ -1,9 +1,9 @@
-package tms.tennismanagementsystem.app.inscriptionformule;
+package tms.tennismanagementsystem.app.inscriptionsformule;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tms.tennismanagementsystem.app.inscriptionformule.exceptions.InscriptionFormuleNotFoundException;
+import tms.tennismanagementsystem.app.inscriptionsformule.exceptions.InscriptionFormuleNotFoundException;
 
 import java.util.List;
 import java.util.UUID;
@@ -24,7 +24,7 @@ public class InscriptionFormuleServiceImplementation implements InscriptionFormu
      * **************************************
      */
     @Override
-    public List<InscriptionFormuleDTO> getAllInscriptionFormules() {
+    public List<InscriptionFormuleDTO> getAllInscriptionsFormule() {
         List<InscriptionFormuleEntity> inscriptionFormuleEntities = inscriptionFormuleRepository.findAll();
         List<InscriptionFormuleDTO> inscriptionFormuleDTOS =
                 inscriptionFormuleEntities.stream().map(

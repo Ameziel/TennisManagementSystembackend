@@ -1,4 +1,4 @@
-package tms.tennismanagementsystem.app.groupecours;
+package tms.tennismanagementsystem.app.groupescours;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
