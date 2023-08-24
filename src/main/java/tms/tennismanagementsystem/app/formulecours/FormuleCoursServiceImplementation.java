@@ -34,6 +34,20 @@ public class FormuleCoursServiceImplementation implements FormuleCoursService {
                 .orElseThrow(() -> new FormuleNotFoundException("Formule not found"));
         return formuleCoursMapperImplementation.fromFormuleCoursEntity(formuleCoursEntity);
     }
+
+    @Override
+    public List<FormuleCoursDTO> getAllActifsFormulesCours() {
+        List<FormuleCoursEntity> formulesCoursActifs = formuleCoursRepository.findAllByActifTrue();
+        List<FormuleCoursDTO> formulesCoursActifsDtos = formulesCoursActifs.stream().map(e -> formuleCoursMapperImplementation.fromFormuleCoursEntity(e)).collect(Collectors.toList());
+        return formulesCoursActifsDtos;
+    }
+
+    @Override
+    public List<FormuleCoursDTO> getAllInactifsFormulesCours() {
+        List<FormuleCoursEntity> formulesCoursInactifs = formuleCoursRepository.findAllByActifFalse();
+        List<FormuleCoursDTO> formulesCoursInactifsDTO = formulesCoursInactifs.stream().map( e -> formuleCoursMapperImplementation.fromFormuleCoursEntity(e)).collect(Collectors.toList());
+        return formulesCoursInactifsDTO;
+    }
     /**
      * **************************************
      * *                                    *
@@ -71,4 +85,5 @@ public class FormuleCoursServiceImplementation implements FormuleCoursService {
     public void deleteFormuleCours(UUID id) {
         formuleCoursRepository.deleteById(id);
     }
+
 }

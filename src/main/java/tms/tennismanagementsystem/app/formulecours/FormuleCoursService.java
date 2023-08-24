@@ -1,6 +1,7 @@
 package tms.tennismanagementsystem.app.formulecours;
 
 import tms.tennismanagementsystem.app.formulecours.exceptions.FormuleNotFoundException;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -12,4 +13,7 @@ public interface FormuleCoursService {
     void deleteFormuleCours(UUID id);
 
 
+    List<FormuleCoursDTO> getAllActifsFormulesCours();
+
+    List<FormuleCoursDTO> getAllInactifsFormulesCours();
 }

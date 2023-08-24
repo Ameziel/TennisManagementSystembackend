@@ -31,6 +31,14 @@ public class FormuleCoursController {
     public FormuleCoursDTO getFormulecours(@PathVariable(name = "id") UUID id) throws FormuleNotFoundException {
         return formuleCoursService.getFormuleCoursById((id));
     }
+    @GetMapping("/formulescours/actifs")
+    public List<FormuleCoursDTO> getAllActifsFormulesCours() {
+        return formuleCoursService.getAllActifsFormulesCours();
+    }
+    @GetMapping("/formulescours/inactifs")
+    public List<FormuleCoursDTO> getAllInactifsFormulesCours() {
+        return formuleCoursService.getAllInactifsFormulesCours();
+    }
 
     /**
      * **************************************
