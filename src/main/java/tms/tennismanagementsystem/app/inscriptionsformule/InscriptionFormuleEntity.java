@@ -24,7 +24,7 @@ public class InscriptionFormuleEntity {
     private Double montantPercu;
     @Enumerated(EnumType.STRING)            //VIREMENT,LIQUIDE
     private MoyenPaiement moyenPaiement;
-    private String notePaiement;
+    private String notePaiement; //TODO Rajouter un champ, paiement complet ?
     @ManyToOne
     @JoinColumn(name = "reference_eleve")
     private EleveEntity referenceEleve;
