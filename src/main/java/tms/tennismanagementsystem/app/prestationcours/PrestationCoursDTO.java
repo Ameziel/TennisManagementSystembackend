@@ -12,4 +12,5 @@ public class PrestationCoursDTO {
     private Integer dureeSeanceMinutePrestation;
     private String commentaire;
     private UUID referenceMoniteur;
+    private UUID referenceGroupe;
 }
