@@ -27,7 +27,7 @@ public class GroupeCoursController {
         return groupeCoursService.getAllGroupesCours();
     }
     @GetMapping("/groupescours/{id}")
-    public GroupeCoursDTO getGroupeCours(@PathVariable(name = "id")UUID id) throws GroupeCoursNotFoundException {
+    public GroupeCoursDTO getGroupeCoursById(@PathVariable(name = "id")UUID id) throws GroupeCoursNotFoundException {
         return groupeCoursService.getGroupeCoursById((id));
     }
     /**
