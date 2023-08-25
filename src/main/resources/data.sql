@@ -44,7 +44,7 @@
     INSERT INTO groupescours (id,libelle,actif)
     VALUES
     ('8CA18B54-8DD7-C821-E34F-AB1580C45235','Cours ADULTE 2 élèves - Jeudi 2022','true'),
-    ('52B79754-D67D-6E55-389D-5F662D469781','Cours JEUNE 4 él_ves - Mercredi 2022 ','true'),
+    ('52B79754-D67D-6E55-389D-5F662D469781','Cours JEUNE 4 élèves - Mercredi 2022 ','true'),
     ('2EFB65CD-5652-F9B6-099D-C8E6146E738F','Cours ADULTE 4 élèves - Vendredi 2023','true'),
     ('15D2C74C-98B1-EE7D-8351-AFBE7008B01C','Cours ADULTE 4 élèves - Mardi 2023','false');
 
