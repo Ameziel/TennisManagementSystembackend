@@ -22,13 +22,13 @@ public class InscriptionFormuleController {
      * *                                    *
      * **************************************
      */
-    @GetMapping("/inscriptionFormule")
+    @GetMapping("/inscriptionsformule")
     public List<InscriptionFormuleDTO> getAllInscriptionsFormule() {
         return inscriptionFormuleService.getAllInscriptionsFormule();
     }
 
-    @GetMapping("/inscriptionFormule/{id}")
-    public InscriptionFormuleDTO getInscriptionFormule(@PathVariable(name = "id")UUID id) throws InscriptionFormuleNotFoundException {
+    @GetMapping("/inscriptionsformule/{id}")
+    public InscriptionFormuleDTO getInscriptionFormuleById(@PathVariable(name = "id")UUID id) throws InscriptionFormuleNotFoundException {
         return inscriptionFormuleService.getInscriptionFormuleById((id));
     }
     /**
@@ -39,7 +39,7 @@ public class InscriptionFormuleController {
      * **************************************
      */
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/inscriptionFormule")
+    @PostMapping("/inscriptionsformule")
     public InscriptionFormuleDTO saveInscriptionFormule(@RequestBody InscriptionFormuleDTO inscriptionFormuleDTO) {
         return inscriptionFormuleService.saveInscriptionFormule(inscriptionFormuleDTO);
     }
@@ -51,7 +51,7 @@ public class InscriptionFormuleController {
      * *                                    *
      * **************************************
      */
-    @PutMapping("/inscriptionFormule/{id}")
+    @PutMapping("/inscriptionsformule/{id}")
     public InscriptionFormuleDTO updateInscriptionFormule(@PathVariable UUID id, @RequestBody InscriptionFormuleDTO inscriptionFormuleDTO) {
         inscriptionFormuleDTO.setId(id);
         return inscriptionFormuleService.updateInscriptionFormule(inscriptionFormuleDTO);
@@ -64,7 +64,7 @@ public class InscriptionFormuleController {
      * **************************************
      */
     @ResponseStatus()
-    @DeleteMapping("/inscriptionFormule/{id}")
+    @DeleteMapping("/inscriptionsformule/{id}")
     public void deleteInscriptionFormule(@PathVariable UUID id) {
         inscriptionFormuleService.deleteInscriptionFormuleDTO(id);
     }
