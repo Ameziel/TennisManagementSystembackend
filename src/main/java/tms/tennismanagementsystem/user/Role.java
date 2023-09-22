@@ -1,7 +1,6 @@
-package tms.tennismanagementsystem.user;
-
-public enum Role {
-
-  USER,
-  ADMIN
-}
+//package tms.tennismanagementsystem.user;
+//
+//public enum Role {
+//  USER,
+//  ADMIN
+//}
