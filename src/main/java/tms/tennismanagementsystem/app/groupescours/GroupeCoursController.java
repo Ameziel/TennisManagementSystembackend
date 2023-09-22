@@ -30,6 +30,11 @@ public class GroupeCoursController {
     public GroupeCoursDTO getGroupeCoursById(@PathVariable(name = "id")UUID id) throws GroupeCoursNotFoundException {
         return groupeCoursService.getGroupeCoursById((id));
     }
+    @GetMapping("/groupescours/actifs")
+    public List<GroupeCoursDTO> getAllActifsGroupeCours() {
+        return groupeCoursService.getAllActifsGroupeCours();
+    }
+
     /**
      * **************************************
      * *                                    *
