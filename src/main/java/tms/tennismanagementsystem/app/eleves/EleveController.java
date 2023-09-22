@@ -15,13 +15,6 @@ import java.util.UUID;
 public class EleveController {
 
     private EleveServiceImplementation eleveServiceImplementation;
-    /**
-     * **************************************
-     * *                                    *
-     * *            GET Method              *
-     * *                                    *
-     * **************************************
-     */
     @GetMapping("/eleves")
     public List<EleveDTO> getAllEleves() {
         return eleveServiceImplementation.getAllEleves();
@@ -45,6 +38,14 @@ public class EleveController {
     @GetMapping("/eleves/email")
     public List<EleveDTO> getAllElevesByEmails(@RequestParam (name = "email", defaultValue = "") String email) {
         return eleveServiceImplementation.findAllByEmail(email);
+    }
+    @GetMapping("/eleves/allNameAsc")
+    public List<EleveDTO> getAllByOrderByNomAsc() {
+        return eleveServiceImplementation.getAllByOrderByNomAsc();
+    }
+    @GetMapping("/eleves/ActifsAndAllNameAsc")
+    public List<EleveDTO> getAllActifsEleveAndOrderByNomAsc() {
+        return eleveServiceImplementation.findAllByActifTrueOrderByNomAsc();
     }
     /**
      * **************************************

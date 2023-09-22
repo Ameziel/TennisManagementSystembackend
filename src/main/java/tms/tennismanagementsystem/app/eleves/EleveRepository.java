@@ -15,4 +15,6 @@ public interface EleveRepository extends JpaRepository<EleveEntity, UUID> {
     List<EleveEntity> findAllByActifTrue();
     List<EleveEntity> findAllByActifFalse();
     List<EleveEntity> findAllByEmail(String email);
+    List<EleveEntity> findAllByOrderByNomAsc();
+    List<EleveEntity> findAllByActifTrueOrderByNomAsc();
 }

@@ -56,6 +56,16 @@ public class EleveServiceImplementation {
         List<EleveDTO> elevesInactifsDtos = elevesByEmail.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
         return elevesInactifsDtos;
     }
+    public List<EleveDTO> getAllByOrderByNomAsc() {
+        List<EleveEntity> eleves = eleveRepository.findAllByOrderByNomAsc();
+        List<EleveDTO> elevesDTO = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
+        return elevesDTO;
+    }
+    public List<EleveDTO> findAllByActifTrueOrderByNomAsc() {
+        List<EleveEntity> eleves = eleveRepository.findAllByActifTrueOrderByNomAsc();
+        List<EleveDTO> elevesDTO = eleves.stream().map(e -> eleveMapperImplementation.fromEleveEntity(e)).collect(Collectors.toList());
+        return elevesDTO;
+    }
     /**
      * **************************************
      * *                                    *
