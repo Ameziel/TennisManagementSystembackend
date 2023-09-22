@@ -12,4 +12,5 @@ public interface MoniteurService {
     MoniteurDTO updateMoniteur(MoniteurDTO moniteurDTO);
     void deleteMoniteur(UUID id);
     List<MoniteurDTO> searchMoniteursByNames(String keyword);
+    List<MoniteurDTO> getAllByActifTrueOrderByNomAsc();
 }

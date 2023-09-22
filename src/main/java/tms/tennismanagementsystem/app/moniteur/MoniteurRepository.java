@@ -13,4 +13,5 @@ public interface MoniteurRepository extends JpaRepository<MoniteurEntity, UUID> 
     List<MoniteurEntity> searchMoniteursByName(@Param("keyword") String keyword);
     List<MoniteurEntity> findAllByActifTrue();
     List<MoniteurEntity> findAllByActifFalse();
+    List<MoniteurEntity> findAllByActifTrueOrderByNomAsc();
 }
