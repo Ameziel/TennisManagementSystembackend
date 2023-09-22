@@ -51,7 +51,7 @@ public class EleveServiceImplementationTest {
         List<EleveDTO> resultat = eleveServiceImplementation.getAllEleves();
         verify(eleveRepository,times(1)).findAll();
         verify(eleveMapperImplementation,times(dataEleves.size())).fromEleveEntity(any(EleveEntity.class));
-        System.out.println("affichage des résultats");
+//        System.out.println("affichage des résultats");
 //        resultat.forEach(e -> System.out.println(e));Affichage de controle
         for(int i = 0; i < dataEleves.size(); i ++) {
             assertEquals(dataEleves.get(i).getId(),resultat.get(i).getId());

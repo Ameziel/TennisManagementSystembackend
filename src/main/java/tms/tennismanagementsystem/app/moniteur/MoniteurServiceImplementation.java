@@ -56,6 +56,11 @@ public class MoniteurServiceImplementation implements MoniteurService{
         List<MoniteurDTO> moniteursInactifsDtos = moniteursInactifs.stream().map(e -> moniteurMapperImplementation.fromMoniteurEntity(e)).collect(Collectors.toList());
         return moniteursInactifsDtos;
     }
+    public List<MoniteurDTO> getAllByActifTrueOrderByNomAsc() {
+        List<MoniteurEntity> moniteursInactifs = moniteurRepository.findAllByActifTrueOrderByNomAsc();
+        List<MoniteurDTO> moniteursInactifsDtos = moniteursInactifs.stream().map(e -> moniteurMapperImplementation.fromMoniteurEntity(e)).collect(Collectors.toList());
+        return moniteursInactifsDtos;
+    }
 
     /**
      * **************************************

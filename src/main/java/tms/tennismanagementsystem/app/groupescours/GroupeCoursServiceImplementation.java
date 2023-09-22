@@ -36,6 +36,13 @@ public class GroupeCoursServiceImplementation implements GroupeCoursService{
                 .orElseThrow(() -> new GroupeCoursNotFoundException());
         return groupeCoursMapperImplementation.fromGroupeCoursEntity(groupeCoursEntity);
     }
+    @Override
+    public List<GroupeCoursDTO> getAllActifsGroupeCours() {
+        List<GroupeCoursEntity> groupeCoursEntities = groupeCoursRepository.findAllByActifTrue();
+        List<GroupeCoursDTO> groupeCoursDTOS = groupeCoursEntities.stream().map(
+                groupeCoursEntity -> groupeCoursMapperImplementation.fromGroupeCoursEntity(groupeCoursEntity)).collect(Collectors.toList());
+        return groupeCoursDTOS;
+    }
     /**
      * **************************************
      * *                                    *
@@ -74,4 +81,5 @@ public class GroupeCoursServiceImplementation implements GroupeCoursService{
     public void deleteGroupeCours(UUID id) {
         groupeCoursRepository.deleteById(id);
     }
+
 }

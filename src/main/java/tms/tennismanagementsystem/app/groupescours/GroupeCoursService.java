@@ -11,5 +11,6 @@ public interface GroupeCoursService {
     GroupeCoursDTO saveGroupeCours(GroupeCoursDTO groupeCoursEntity);
     GroupeCoursDTO updateGroupeCours(GroupeCoursDTO groupeCoursEntity);
     void deleteGroupeCours(UUID id);
+    List<GroupeCoursDTO> getAllActifsGroupeCours();
 
 }

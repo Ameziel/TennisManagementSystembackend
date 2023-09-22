@@ -31,6 +31,10 @@ public class MoniteurController {
     public MoniteurDTO getMoniteurById(@PathVariable(name = "id")UUID id) throws MoniteurNotFoundException {
         return moniteurService.getMoniteurById((id));
     }
+    @GetMapping("/moniteurs/ActifsAndAllNameAsc")
+    public List<MoniteurDTO> getAllActifsEleveAndOrderByNomAsc() {
+        return moniteurService.getAllByActifTrueOrderByNomAsc();
+    }
 
     /**
      * **************************************
